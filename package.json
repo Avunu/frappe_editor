@@ -1,0 +1,25 @@
+{
+  "name": "frappe-editor",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tiptap/core": "^2.7.0",
+    "@tiptap/pm": "^2.7.0",
+    "frappe-ui": "^0.1",
+    "vue": "^3.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4",
+    "autoprefixer": "^10",
+    "postcss": "^8",
+    "tailwindcss": "^3",
+    "typescript": "^5",
+    "vite": "^4",
+    "vue-router": "^4.5.0"
+  }
+}

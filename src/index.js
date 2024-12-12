@@ -1,3 +1,4 @@
+import './style.css';
 import { createApp, h } from 'vue';
 import FrappeEditor from './FrappeEditor.vue';
 

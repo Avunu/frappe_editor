@@ -1,6 +1,10 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
+import autoprefixer from 'autoprefixer'
+// import postcssModules from 'postcss-modules'
+import prefixer from 'postcss-prefix-selector';
+
 
 export default defineConfig({
 	plugins: [vue()],
@@ -13,6 +17,7 @@ export default defineConfig({
 		},
 		outDir: 'frappe_editor/public/dist',
 		emptyOutDir: true,
+		minify: true,
 		target: 'es2015',
 		rollupOptions: {
 			output: {
@@ -20,12 +25,30 @@ export default defineConfig({
 			}
 		}
 	},
+	// css: {
+	// 	modules: {
+	// 		scopeBehavior: 'local',
+	// 		generateScopedName: '[hash:base64:5]',
+	// 		localsConvention: 'camelCaseOnly'
+	// 	},
+	// 	postcss: {
+	// 		plugins: [
+	// 			autoprefixer(),
+	// 			prefixer({
+	// 				prefix: '.frappe-editor',
+	// 				transform(prefix, selector, prefixedSelector, filePath, rule) {
+	// 					return prefix + ' ' + selector;
+	// 				}
+	// 			}),
+	// 		]
+	// 	}
+	// },
+	define: {
+		'process.env': process.env
+	},
 	optimizeDeps: {
 		include: [
 			"frappe-ui",
 		],
-	},
-	define: {
-		'process.env': process.env
 	},
 })

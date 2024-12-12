@@ -1,7 +1,14 @@
 module.exports = {
-	presets: [require("frappe-ui/src/tailwind/preset.js")],
+	presets: [require('frappe-ui/src/tailwind/preset.js')],
 	content: [
-		"./src/*.{vue,js,ts}",
-		"./node_modules/frappe-ui/src/components/**/*.{vue,js,ts}",
-	]
-}
+	  './src/*.{vue,js}',
+	  './node_modules/frappe-ui/src/components/**/*.{vue,js}',
+	  './node_modules/@tiptap/**/*.{vue,js,ts}',
+	],
+	theme: {
+	  extend: {},
+	},
+	plugins: [],
+	important: true,
+	minify: true,
+  }

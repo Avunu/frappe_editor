@@ -1,3 +1,7 @@
+#frappeui-popper-root {
+	position: absolute;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

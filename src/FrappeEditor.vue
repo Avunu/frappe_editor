@@ -1,7 +1,15 @@
 <template>
   <div class="frappe-editor">
-    <TextEditor :editor-class="editorClass" :fixedMenu="true" :bubbleMenu="true" :content="modelValue"
-      @change="$emit('update:modelValue', $event)" :placeholder="placeholder" :editable="!disabled" />
+    <TextEditor 
+      ref="editor"
+      :editor-class="editorClass" 
+      :fixedMenu="true" 
+      :bubbleMenu="true" 
+      :content="content"
+      @change="$emit('change', $event)"
+      :placeholder="placeholder" 
+      :editable="!disabled" 
+    />
   </div>
 </template>
 
@@ -14,7 +22,7 @@ export default {
     TextEditor
   },
   props: {
-    modelValue: {
+    content: {
       type: String,
       default: ''
     },
@@ -31,6 +39,6 @@ export default {
       default: 'border focus:outline-none max-w-none overflow-auto p-3 prose-sm rounded-b-lg'
     }
   },
-  emits: ['update:modelValue']
+  emits: ['change']
 }
 </script>

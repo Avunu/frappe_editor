@@ -1,6 +1,23 @@
 import './style.css';
-import { createApp, h } from 'vue';
+import { createApp, ref, h } from 'vue';
 import FrappeEditor from './FrappeEditor.vue';
+
+// Monkey patch to reroute the popper root
+(function() {
+    const originalAppend = document.body.appendChild.bind(document.body);
+    document.body.appendChild = function(node) {
+      if (node.id === 'frappeui-popper-root') {
+        // We want to mount this inside a known container for our editor
+        // We'll assume an element with class .frappe-editor-root exists in the DOM
+        const container = document.querySelector('.frappe-editor-root');
+        if (container) {
+          container.appendChild(node);
+          return node;
+        }
+      }
+      return originalAppend(node);
+    };
+  })();
 
 frappe.ui.form.ControlTextEditor = class ControlTextEditor extends frappe.ui.form.ControlCode {
     make_wrapper() {
@@ -13,39 +30,46 @@ frappe.ui.form.ControlTextEditor = class ControlTextEditor extends frappe.ui.for
     }
 
     make_editor() {
-        this.editor_container = $('<div class="relative w-full">').appendTo(this.input_area);
+        this.editor_container = $('<div class="frappe-editor-root">').appendTo(this.input_area);
+        
+        const self = this;
+        this.content = ref(this.value);
         
         this.editor_app = createApp({
-            render: () => h(FrappeEditor, {
-                modelValue: this.value,
-                placeholder: this.df.placeholder || '',
-                disabled: this.disabled,
-                'onUpdate:modelValue': (value) => {
-                    this.parse_validate_and_set_in_model(value);
+            setup() {
+                return { 
+                    content: self.content
                 }
-            })
+            },
+            render() {
+                return h(FrappeEditor, {
+                    content: self.content.value,
+                    placeholder: self.df.placeholder || '',
+                    disabled: self.disabled,
+                    onChange: (value) => {
+                        self.parse_validate_and_set_in_model(value);
+                    }
+                })
+            }
         });
 
-        // Add portal settings
-        this.editor_app.config.unwrapInjectedRef = true;
         this.editor_app.mount(this.editor_container[0]);
     }
 
     set_formatted_input(value) {
         if (!this.editor_container) return;
         
-        if (this.value !== value) {
-            this.value = value;
-            this.editor_app.unmount();
-            this.make_editor();
+        this.value = value;
+        
+        if (this.content) {
+            this.content.value = value || '';
         }
     }
 
-    destroy() {
-        if (this.editor_app) {
-            this.editor_app.unmount();
-            this.editor_app = null;
+    get_input_value() {
+        if (this.content) {
+            return this.content.value || '';
         }
-        super.destroy();
+        return this.value || '';
     }
 };

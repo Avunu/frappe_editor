@@ -8,10 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tiptap/core": "^2.7.0",
-    "@tiptap/pm": "^2.7.0",
+    "@tiptap/core": "^2",
+    "@tiptap/pm": "^2",
     "frappe-ui": "^0.1",
-    "vue": "^3.5"
+    "vue": "^3"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^7.0.2",

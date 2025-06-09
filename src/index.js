@@ -2,22 +2,37 @@ import './style.css';
 import { createApp, ref, h } from 'vue';
 import FrappeEditor from './FrappeEditor.vue';
 
-// Monkey patch to reroute the popper root
+// Ensure popper roots are properly positioned for our editor
 (function() {
-    const originalAppend = document.body.appendChild.bind(document.body);
-    document.body.appendChild = function(node) {
-      if (node.id === 'frappeui-popper-root') {
-        // We want to mount this inside a known container for our editor
-        // We'll assume an element with class .frappe-editor-root exists in the DOM
-        const container = document.querySelector('.frappe-editor-root');
-        if (container) {
-          container.appendChild(node);
-          return node;
+    // Create or ensure the popper root exists and is properly positioned
+    const ensurePopperRoot = () => {
+        let popperRoot = document.getElementById('frappeui-popper-root');
+        if (!popperRoot) {
+            popperRoot = document.createElement('div');
+            popperRoot.id = 'frappeui-popper-root';
+            document.body.appendChild(popperRoot);
         }
-      }
-      return originalAppend(node);
+        
+        // Ensure it has the correct positioning and styling
+        Object.assign(popperRoot.style, {
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            zIndex: '9999'
+        });
+        
+        return popperRoot;
     };
-  })();
+    
+    // Ensure both roots exist when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            ensurePopperRoot();
+        });
+    } else {
+        ensurePopperRoot();
+    }
+})();
 
 frappe.ui.form.ControlTextEditor = class ControlTextEditor extends frappe.ui.form.ControlCode {
     make_wrapper() {

@@ -21,10 +21,11 @@ export default {
           return selector;
         }
 
-        // Generate dual selectors: one for .frappe-editor-root and one for popover containers
+        // Generate selectors for all popover containers
         const popoverSelectors = [
           "#frappeui-popper-root " + selector,
           "[data-tippy-root] " + selector,
+          "[data-reka-popper-content-wrapper] " + selector,
         ];
 
         return [prefix + " " + selector, ...popoverSelectors].join(", ");

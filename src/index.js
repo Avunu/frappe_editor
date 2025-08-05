@@ -61,6 +61,10 @@ frappe.ui.form.ControlTextEditor = class ControlTextEditor extends frappe.ui.for
 					content: self.content.value,
 					placeholder: self.df.placeholder || "",
 					disabled: self.disabled,
+					doctype: self.frm?.doctype,
+					docname: self.frm?.docname,
+					frm: self.frm,
+					folder: self.df.folder || "Home/Attachments",
 					onChange: (value) => {
 						self.parse_validate_and_set_in_model(value);
 					},

@@ -1,9 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
-import autoprefixer from 'autoprefixer'
-// import postcssModules from 'postcss-modules'
-import prefixer from 'postcss-prefix-selector'
 import Icons from 'unplugin-icons/vite';
 
 
@@ -31,24 +28,6 @@ export default defineConfig({
 			}
 		}
 	},
-	// css: {
-	// 	modules: {
-	// 		scopeBehavior: 'local',
-	// 		generateScopedName: '[hash:base64:5]',
-	// 		localsConvention: 'camelCaseOnly'
-	// 	},
-	// 	postcss: {
-	// 		plugins: [
-	// 			autoprefixer(),
-	// 			prefixer({
-	// 				prefix: '.frappe-editor',
-	// 				transform(prefix, selector, prefixedSelector, filePath, rule) {
-	// 					return prefix + ' ' + selector;
-	// 				}
-	// 			}),
-	// 		]
-	// 	}
-	// },
 	define: {
 		'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
 	},

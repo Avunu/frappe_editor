@@ -1,10 +1,16 @@
-module.exports = {
-	plugins: {
-		'@tailwindcss/nesting': {},
-		'@tailwindcss/postcss': {},
-		autoprefixer: {},
-		'postcss-prefix-selector': {
-			prefix: '.frappe-editor',
+import tailwindcss from 'tailwindcss'
+import tailwindcssNesting from '@tailwindcss/nesting'
+import postcssPrefixSelector from 'postcss-prefix-selector'
+import autoprefixer from 'autoprefixer'
+import cssnano from 'cssnano'
+
+export default {
+	plugins: [
+		tailwindcssNesting,
+		tailwindcss,
+		autoprefixer,
+		postcssPrefixSelector({
+			prefix: '.frappe-editor-root',
 			transform: function (prefix, selector, prefixedSelector) {
 				// Don't prefix selectors that are already targeting popover containers
 				if (selector.startsWith('#frappeui-popper-root') ||
@@ -13,7 +19,7 @@ module.exports = {
 					return selector
 				}
 
-				// Generate dual selectors: one for .frappe-editor and one for popover containers
+				// Generate dual selectors: one for .frappe-editor-root and one for popover containers
 				const popoverSelectors = [
 					'#frappeui-popper-root ' + selector,
 					'[data-tippy-root] ' + selector
@@ -21,7 +27,7 @@ module.exports = {
 
 				return [prefix + ' ' + selector, ...popoverSelectors].join(', ');
 			}
-		},
-		cssnano: {},
-	},
+		}),
+		cssnano,
+	],
 }

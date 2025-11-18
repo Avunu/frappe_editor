@@ -61,6 +61,7 @@ frappe.ui.form.ControlTextEditor = class ControlTextEditor extends frappe.ui.for
 					content: self.content.value,
 					placeholder: self.df.placeholder || "",
 					disabled: self.disabled,
+					hideToolbar: !!self.grid_row, // Hide toolbar in grid mode
 					onChange: (value) => {
 						self.parse_validate_and_set_in_model(value);
 					},

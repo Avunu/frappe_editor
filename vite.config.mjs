@@ -20,7 +20,7 @@ export default defineConfig({
     outDir: "frappe_editor/public/dist",
     emptyOutDir: true,
     minify: true,
-    target: "es2015",
+    target: "es2022",
     rollupOptions: {
       output: {
         assetFileNames: "frappe-editor.css",

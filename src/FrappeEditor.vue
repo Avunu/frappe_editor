@@ -3,8 +3,8 @@
 		<TextEditor
 			ref="editor"
 			:editor-class="editorClass"
-			:fixedMenu="true"
-			:bubbleMenu="true"
+			:fixedMenu="!hideToolbar"
+			:bubbleMenu="!hideToolbar"
 			:content="content"
 			@change="$emit('change', $event)"
 			:placeholder="placeholder"
@@ -31,6 +31,10 @@ export default {
 			default: "",
 		},
 		disabled: {
+			type: Boolean,
+			default: false,
+		},
+		hideToolbar: {
 			type: Boolean,
 			default: false,
 		},

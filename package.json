@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "upgrade": "npx npm-check-updates -u && yarn install"
+    "upgrade": "npx npm-check-updates -u && yarn install && npx yarn-audit-fix && yarn add -D tailwindcss@^3.4"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1",
@@ -23,10 +23,10 @@
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "@vitejs/plugin-vue": "^6",
     "autoprefixer": "^10.5.0",
-    "baseline-browser-mapping": "^2.10.21",
-    "cssnano": "^7.1.7",
+    "baseline-browser-mapping": "^2.10.27",
+    "cssnano": "^8.0.0",
     "postcss": "^8",
-    "postcss-minify-selectors": "^7.1.0",
+    "postcss-minify-selectors": "^8.0.0",
     "postcss-modules": "^6.0.1",
     "postcss-prefix-selector": "^2.1.1",
     "postcss-rename": "^0.8.1",

@@ -23,10 +23,10 @@
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "@vitejs/plugin-vue": "^6",
     "autoprefixer": "^10.5.0",
-    "baseline-browser-mapping": "^2.10.32",
-    "cssnano": "^8.0.1",
+    "baseline-browser-mapping": "^2.10.37",
+    "cssnano": "^8.0.2",
     "postcss": "^8",
-    "postcss-minify-selectors": "^8.0.1",
+    "postcss-minify-selectors": "^8.0.2",
     "postcss-modules": "^6.0.1",
     "postcss-prefix-selector": "^2.1.1",
     "postcss-rename": "^0.8.1",
@@ -34,6 +34,6 @@
     "typescript": "^6",
     "unplugin-icons": "^23.0.1",
     "vite": "^8",
-    "vue-router": "^5.0.7"
+    "vue-router": "^5.1.0"
   }
 }

@@ -1,0 +1,28 @@
+name: check
+
+# CI gate for this repo. Auto-merge is only as safe as what runs here, so this is what
+# you mark required on `develop`.
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile
+
+      # `yarn build` is a plain `vite build` with no bench dependency, so it runs clean
+      # in CI. It exercises the whole Tailwind 3 + postcss chain (nesting, purgecss,
+      # cssnano, the prefix/rename passes), which is exactly what a bad dependency bump
+      # breaks — including any attempt to slip past the tailwindcss < 4 cap.
+      - run: yarn build

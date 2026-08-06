@@ -1,11 +1,31 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
+
+# Keeps the JS dependencies current. PRs auto-merge once the required checks go green —
+# see .github/workflows/dependabot-auto-merge.yml.
+#
+# NOTE: the ecosystem key is `npm`, not `yarn`. Dependabot has no `yarn` ecosystem — the
+# previous config here used `package-ecosystem: "yarn"`, which fails validation, so no
+# updates were ever produced. The npm updater reads yarn.lock (v1 here) and resolves
+# with yarn.
 updates:
-  - package-ecosystem: "yarn" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: npm
+    directory: /
     schedule:
-      interval: "weekly"
+      interval: daily
+    commit-message:
+      prefix: chore
+    groups:
+      npm:
+        patterns: ["*"]
+    ignore:
+      # This app is frappe-ui based, and frappe-ui is still a Tailwind 3 consumer.
+      # Tailwind 4 is a rewrite — new Oxide engine, `@tailwind` directives replaced by
+      # `@import "tailwindcss"`, and JS config superseded by CSS-first `@theme` — so
+      # nothing on frappe-ui can move past 3.4 yet. tailwindcss is a direct devDependency
+      # here (pinned `^3.4`, with tailwind.config.mjs + the postcss chain built around
+      # it), so this cap is load-bearing: without it the daily group PR would drag the
+      # whole build to Tailwind 4. It also makes the manual re-pin at the tail of the
+      # `upgrade` script (`yarn add -D tailwindcss@^3.4`) unnecessary for bot updates.
+      # Drop this block once frappe-ui ships Tailwind 4 support.
+      - dependency-name: tailwindcss
+        versions: [">= 4"]

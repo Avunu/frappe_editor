@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "upgrade": "npx npm-check-updates -u && yarn install && npx yarn-audit-fix && yarn add -D tailwindcss@^3.4 && yarn add -D typescript@^5.9"
+    "upgrade": "npx npm-check-updates -u --reject typescript-5 && yarn install && npx yarn-audit-fix && yarn add -D tailwindcss@^3.4 && yarn add -D typescript-5@npm:typescript@^5.9"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1",
@@ -32,6 +32,7 @@
     "postcss-rename": "^0.8.1",
     "tailwindcss": "^3.4",
     "typescript": "^7.0.2",
+    "typescript-5": "npm:typescript@^5.9",
     "unplugin-icons": "^23.0.1",
     "vite": "^8",
     "vue-router": "^5.2.0"

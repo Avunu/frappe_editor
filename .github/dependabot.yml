@@ -29,3 +29,5 @@ updates:
       # Drop this block once frappe-ui ships Tailwind 4 support.
       - dependency-name: tailwindcss
         versions: [">= 4"]
+      - dependency-name: typescript-5
+        versions: [">= 5"]

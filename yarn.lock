@@ -183,9 +183,9 @@
     "@iconify/types" "*"
 
 "@iconify/json@^2":
-  version "2.2.511"
-  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.511.tgz#e8f5ace079671ee6ac6b0d6af5d9b9f74e8355f5"
-  integrity sha512-yYsoI0cAv3QrdOfGljIw6Ksmy1hnFfQ3+XmEIoIp9x735Vd5gqKCKRzemvUohP0kmOW4UC9S7po9VGYfmoU4sA==
+  version "2.2.512"
+  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.512.tgz#c6883db1a21d22fdd0c1a22d3f33f576f14c90e4"
+  integrity sha512-4+qj62xPgv2EN1et18wT7EPfTa/lN4o4CMupdKBncmPyl7BhBmSexgBWGRPzoX7WkX+l72AkaxJHJaKaaKI+xg==
   dependencies:
     "@iconify/types" "*"
     pathe "^2.0.3"
@@ -1091,10 +1091,10 @@ base64-js@^1.3.1:
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
   integrity sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
 
-baseline-browser-mapping@^2.10.44, baseline-browser-mapping@^2.11.12:
-  version "2.11.12"
-  resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.11.12.tgz#42ac48770bf73d292f60ce8ba4dc5e7ebb242ec3"
-  integrity sha512-r7WnVImvVCeFpf2DOXfy41aPWzeNg3H/A2X4dKmy1QL0MSyyk/e7z8ihJ3N6Nn2PsdhkVlqnEfnUE4a05P2aTA==
+baseline-browser-mapping@^2.10.44, baseline-browser-mapping@^2.11.12, baseline-browser-mapping@^2.11.13:
+  version "2.11.13"
+  resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.11.13.tgz#660073103c1bee93e54df55f117b7528adf6af19"
+  integrity sha512-k9HNuUVMlqVjQ9UHzfPjIqiDbWw7WqT1AoT7GL8VwvF3r0ZfArtgiSPAlmupyNquNgOJHTuH4CKYf8ttMTWBTQ==
 
 binary-extensions@^2.0.0:
   version "2.3.0"

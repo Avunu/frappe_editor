@@ -183,9 +183,9 @@
     "@iconify/types" "*"
 
 "@iconify/json@^2":
-  version "2.2.513"
-  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.513.tgz#71f103132dc874386b581d673fd2efc3f54af77d"
-  integrity sha512-PnksKLhD/7/LPNeTLZbkTnkzPqd+4m/ToEvzqPtBJzkOT/wTEoLXkrz0BWUv6SdQ4NOM5Xsqc+abVarzXSlh4A==
+  version "2.2.514"
+  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.514.tgz#94994844714a8d5fbed8eb7398c5308b3bd54eda"
+  integrity sha512-s+2An8ag94+d++WUpaCtasgV5VfDHBovSICI6lfIL10idJzHtFiY0RKn5U15w5JQWJNgwzlrKuYCbWJjF3/rQg==
   dependencies:
     "@iconify/types" "*"
     pathe "^2.0.3"
@@ -440,9 +440,9 @@
     "@tanstack/virtual-core" "3.13.12"
 
 "@tiptap/core@^3", "@tiptap/core@^3.11.0", "@tiptap/core@^3.29.2":
-  version "3.29.2"
-  resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-3.29.2.tgz#90d24591a9e7fb450ffb95ed6a42f529348e3e9e"
-  integrity sha512-oKUkiPUB7noilVYxI9lNzUD4rX17sHub+PYjMfHMWHG9A3nvIy+FdePIVIIhThKWF7ijhr3eIqHY51Bn+GAFtw==
+  version "3.30.0"
+  resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-3.30.0.tgz#8cee48f499491fee2e95445dadcb4d7991777fe4"
+  integrity sha512-jlR5STfcpoYxvqnWoR6dhnkB0OBTNbTWd/Jw10wx1LLCrUOK2vrM1z3rXdiVSqqoDjphEu8HX/k4q+Okt+5YGg==
 
 "@tiptap/extension-blockquote@^3.29.2":
   version "3.29.2"
@@ -634,9 +634,9 @@
   integrity sha512-BCz+FCAChSYtUe4BFj97HEO+nSK+J7GxbJgZG4Hg7DT/gI+hRyeNndU8efiQAx3WGdzsFi3UxRpcF1tTQM7iMQ==
 
 "@tiptap/pm@^3", "@tiptap/pm@^3.11.0", "@tiptap/pm@^3.29.2":
-  version "3.29.2"
-  resolved "https://registry.yarnpkg.com/@tiptap/pm/-/pm-3.29.2.tgz#de461c6f8986ef807082f467cde2d8fdf1cce4bc"
-  integrity sha512-GCOme7xHaS+DSoaA4CDcAD3l6JyBlvZhvCyfsy2Vp6j8tEoBkZWio7soYVosmlyn7zq8/64VeFZP5s47yfG7fQ==
+  version "3.30.0"
+  resolved "https://registry.yarnpkg.com/@tiptap/pm/-/pm-3.30.0.tgz#5c11318b5772acecdae66a28b69965a11957ed62"
+  integrity sha512-0if2mMq/9nZ/IOiuuyvo36OEz/fhwFJiHNy49+NywUkkKVSsa6S7Pcsxb03RnKzW648EanOjE5oqTd4jCkgRKg==
   dependencies:
     prosemirror-changeset "^2.4.1"
     prosemirror-commands "^1.7.1"

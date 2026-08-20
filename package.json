@@ -23,7 +23,7 @@
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "@vitejs/plugin-vue": "^6",
     "autoprefixer": "^10.5.4",
-    "baseline-browser-mapping": "^2.11.14",
+    "baseline-browser-mapping": "^2.11.15",
     "cssnano": "^8.0.6",
     "postcss": "^8",
     "postcss-minify-selectors": "^8.0.5",

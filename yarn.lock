@@ -176,16 +176,16 @@
     "@tanstack/vue-virtual" "^3.0.0-beta.60"
 
 "@iconify-json/lucide@^1":
-  version "1.2.125"
-  resolved "https://registry.yarnpkg.com/@iconify-json/lucide/-/lucide-1.2.125.tgz#43ad13ed2baeaeb4badb751eb84913f5f0cf15b3"
-  integrity sha512-tOCk1QKMtKnCfPAgZRHgjRkQTP7wF5IO+iPKvvp8vxGZYPkSLhx4HTV3Ng0pIZ3wNWrS6kVpHkunJ1dc19L1og==
+  version "1.2.126"
+  resolved "https://registry.yarnpkg.com/@iconify-json/lucide/-/lucide-1.2.126.tgz#2dc7e9650d58074f0d730f859eb16083c81fe287"
+  integrity sha512-Fl3OfR71yeWLrlTLp6C4W5W3rJJDWH9/e70mjtq9VAldYDxvHh149JMNPz7foTeLLTE2Paynnp2aYKVL9rgF5Q==
   dependencies:
     "@iconify/types" "*"
 
 "@iconify/json@^2":
-  version "2.2.519"
-  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.519.tgz#9ec87f48f5dcc7997a1db5847840761d0254fbf3"
-  integrity sha512-zwjQIYYLnT8b2SUELffIDzsfftTjdYTUfE+iaZGUg8jEckx69CU/tWqt65GZt7B3D2pKk7f651lbY9QYWIKOYA==
+  version "2.2.520"
+  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.520.tgz#4543910bda6f094706d0442fe613e351e1a4c20f"
+  integrity sha512-WySQx8JrnDXmrEc5nhbnXAQU1T5Xjyhz+ZdB0kW1Lufp/GcDT2lLKHSYm3bvwPRbd/GL1ZFaKI/M65g4Z/uUTQ==
   dependencies:
     "@iconify/types" "*"
     pathe "^2.0.3"
@@ -445,9 +445,9 @@
     "@tanstack/virtual-core" "3.13.12"
 
 "@tiptap/core@^3", "@tiptap/core@^3.11.0", "@tiptap/core@^3.29.2":
-  version "3.30.2"
-  resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-3.30.2.tgz#2d32b216cdda805e7649092023b2e6fdf626ca2b"
-  integrity sha512-QbZC/s1OOqcoUdkhIY16TjR/gCtR0qAk9e4bJwUqOJqZuv5ozqCL5hzWm22jjTPp6c6Ei2tPd6t30VwfIKW4lQ==
+  version "3.30.3"
+  resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-3.30.3.tgz#ec41b618f821e02d34542b33b6b11e63d153eafb"
+  integrity sha512-kDD8KY99lBCKntCqTBE9eNR1ul/i/wPFw2METWT+LYZvifljXq2oiX6JaGF1Sk59efe7+sq9IISxOk47YlBiWQ==
 
 "@tiptap/extension-blockquote@^3.29.2":
   version "3.29.2"
@@ -639,9 +639,9 @@
   integrity sha512-BCz+FCAChSYtUe4BFj97HEO+nSK+J7GxbJgZG4Hg7DT/gI+hRyeNndU8efiQAx3WGdzsFi3UxRpcF1tTQM7iMQ==
 
 "@tiptap/pm@^3", "@tiptap/pm@^3.11.0", "@tiptap/pm@^3.29.2":
-  version "3.30.2"
-  resolved "https://registry.yarnpkg.com/@tiptap/pm/-/pm-3.30.2.tgz#2fa2121e0c01d6b42d55d06b57c798736492c35c"
-  integrity sha512-BJN8tUx4ppFN3R3cV/FJfrJbJkvo1lj4uciq+nwpjwzdRvFzqIuglWf+HLcJ6CwlYpLOHp7ArgkBg4Q5e60Gog==
+  version "3.30.3"
+  resolved "https://registry.yarnpkg.com/@tiptap/pm/-/pm-3.30.3.tgz#d403f772716bdc714d3413fd9677e3da16e34cf3"
+  integrity sha512-VheaqLAFUe+PCYEgHubM96Z1OAiluFhijQ2Cy1Ghiozoxm5OzevSaKhqm8SQ1VGfzZZko59oUjRzOmu8tB8yfA==
   dependencies:
     prosemirror-changeset "^2.4.1"
     prosemirror-commands "^1.7.1"
@@ -1096,10 +1096,10 @@ base64-js@^1.3.1:
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
   integrity sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
 
-baseline-browser-mapping@^2.11.12, baseline-browser-mapping@^2.11.18:
-  version "2.11.18"
-  resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.11.18.tgz#49701f6ab6c58ccafb6d8e1ab2767574d9f0ba73"
-  integrity sha512-1iEmLEYSiE1SeBoAfPo/Mnx3PzfzHUkDK61ASkCpuk3YXugYLH5DYK1SzqV55F8FMI6s0F+/tCP7Polz1QRjxw==
+baseline-browser-mapping@^2.11.12, baseline-browser-mapping@^2.11.19:
+  version "2.11.19"
+  resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.11.19.tgz#4711abac48b88ccb56b5817e86f1b3a9a0764276"
+  integrity sha512-Grytf1xOxOEMTGRwx6rLGKkTabd4vMg3VrKdj/7joCmV0qgh4QwMMO6xh34YEXQqirAuUdgQGa5orJQQ+69RBw==
 
 binary-extensions@^2.0.0:
   version "2.3.0"

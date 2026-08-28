@@ -24,7 +24,7 @@
     "@vitejs/plugin-vue": "^6",
     "autoprefixer": "^10.5.4",
     "baseline-browser-mapping": "^2.11.19",
-    "cssnano": "^8.0.8",
+    "cssnano": "^8.0.9",
     "postcss": "^8",
     "postcss-minify-selectors": "^8.0.5",
     "postcss-modules": "^9.0.1",

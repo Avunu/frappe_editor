@@ -149,16 +149,16 @@
     "@tanstack/vue-virtual" "^3.0.0-beta.60"
 
 "@iconify-json/lucide@^1":
-  version "1.2.127"
-  resolved "https://registry.yarnpkg.com/@iconify-json/lucide/-/lucide-1.2.127.tgz#d7e08d176261701a4bb6f22110be1887f3ee401c"
-  integrity sha512-7KuCCpkly00kefna4wEnCr8l2HFRkbn4mD4zRib8wCSbrBmnR/l57ExpU6j5jv/Bo+qHpWuHpDtcqceQ0ptArw==
+  version "1.2.128"
+  resolved "https://registry.yarnpkg.com/@iconify-json/lucide/-/lucide-1.2.128.tgz#7accfa59cd8d7800348d1ed1ecbf0933c783c20c"
+  integrity sha512-s8tZ6BIQfkwl6INcdHMri3bokShU/MwOVM8cyFUgE7QJ3EuwmIhXFsrqtA0WD8YrhoII1K+KA5EEIJ4x0JWIdw==
   dependencies:
     "@iconify/types" "*"
 
 "@iconify/json@^2":
-  version "2.2.522"
-  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.522.tgz#551fe40b6ea8c5f0b17f51dcb9d5dfe8f7cefb2c"
-  integrity sha512-YJfmIfMUNaYcmBVig39XoHoX133cDE97Rc9SxNKbfI2fOmfxfuPsZd1L2wv+fczSeq/bTEI+68SxBcg1dSZa2g==
+  version "2.2.524"
+  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.524.tgz#90ac118cec04a019d9cae029da3874e2c2a3c0b4"
+  integrity sha512-xw2TRuiRcOzx8mTXRNIfg9FYr4sd7Z7s/DGKitJZt3njeiFmjHte8qKWEGK+IePYtQ1QyVnhfOi+5sEjVTmvDQ==
   dependencies:
     "@iconify/types" "*"
     pathe "^2.0.3"
@@ -418,9 +418,9 @@
     "@tanstack/virtual-core" "3.13.12"
 
 "@tiptap/core@^3", "@tiptap/core@^3.11.0", "@tiptap/core@^3.29.2":
-  version "3.30.5"
-  resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-3.30.5.tgz#9929ae10a5e0892fb1a38a197ae8208cdd3801ea"
-  integrity sha512-3O7N0FyKIfuLV+xrdWyDM3V5eUY/q2CgLjhhMwOAbM1Pu7VPp9VP+TpEYOdH8aRyB+h1vj5hX5A747D8ZrPfHA==
+  version "3.30.6"
+  resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-3.30.6.tgz#f60079cd863a3bcc42791b2411b2e76aa8ce22d3"
+  integrity sha512-M32+WOx1IrPRbPunhG1Xl7ETgUZJGABpGi/y969Uio6rR4tPBnOgFG5xXE3Xw6OQtYUqUE2n9nnnckoObZwBzA==
 
 "@tiptap/extension-blockquote@^3.29.2":
   version "3.29.2"
@@ -612,9 +612,9 @@
   integrity sha512-BCz+FCAChSYtUe4BFj97HEO+nSK+J7GxbJgZG4Hg7DT/gI+hRyeNndU8efiQAx3WGdzsFi3UxRpcF1tTQM7iMQ==
 
 "@tiptap/pm@^3", "@tiptap/pm@^3.11.0", "@tiptap/pm@^3.29.2":
-  version "3.30.5"
-  resolved "https://registry.yarnpkg.com/@tiptap/pm/-/pm-3.30.5.tgz#6d53957bd9d5b0bbde3ec49b449deaf16b8822f0"
-  integrity sha512-gufkLkW2tA6PZPjivYxDiGzTIIftwqhmYI6lvvKu2S4FbhcysJgMAe/GXVSywzCRVVex9SrvCe6RFYrqnwRitQ==
+  version "3.30.6"
+  resolved "https://registry.yarnpkg.com/@tiptap/pm/-/pm-3.30.6.tgz#0bf87c4cf65caf55989be448f80457bd3c5b1096"
+  integrity sha512-FVzgc+7TMKUreBqFHmyhDSkFUMZPgIzWdeNt4sWLFEzwzdklgKy/+MZClAq9m+bJJU2FKC2+SVmWTatZD6didg==
   dependencies:
     prosemirror-changeset "^2.4.1"
     prosemirror-commands "^1.7.1"
@@ -2365,10 +2365,10 @@ postcss-ordered-values@^9.0.0:
     cssnano-utils "^7.0.0"
     postcss-value-parser "^4.2.0"
 
-postcss-prefix-selector@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/postcss-prefix-selector/-/postcss-prefix-selector-2.1.1.tgz#b293b1cd854f9006efed34386bd41bb695bb2a78"
-  integrity sha512-ZBgf427Et6+XnrnJ9VXtJEKCjJwTvn2wn/qMg+wvvlRhIeFIAxdbrlZZ0CSsWYMJfcyPLBh8ogj5O1kb/Mcx3g==
+postcss-prefix-selector@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/postcss-prefix-selector/-/postcss-prefix-selector-2.2.0.tgz#3b7846f011cabbf21733e9b94a52484f11d506c6"
+  integrity sha512-pGKK57v2SXKo5CD41tAnFh82Y+cxvS3lgTtt7e2YatH1nS3ADTI+U3Lk/NfG+xBz9fyU0KAYoBs1YVwqmGZ9nA==
 
 postcss-reduce-initial@^9.0.0:
   version "9.0.0"

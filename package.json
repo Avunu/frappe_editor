@@ -22,8 +22,8 @@
     "@iconify/json": "^2",
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "@vitejs/plugin-vue": "^6",
-    "autoprefixer": "^10.5.4",
-    "baseline-browser-mapping": "^2.11.20",
+    "autoprefixer": "^10.5.5",
+    "baseline-browser-mapping": "^2.11.21",
     "cssnano": "^9.0.2",
     "postcss": "^8",
     "postcss-minify-selectors": "^9.0.2",
@@ -35,6 +35,6 @@
     "typescript-5": "npm:typescript@^5.9",
     "unplugin-icons": "^23.0.1",
     "vite": "^8",
-    "vue-router": "^5.3.0"
+    "vue-router": "^5.3.1"
   }
 }

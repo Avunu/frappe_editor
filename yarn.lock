@@ -144,16 +144,16 @@
     "@tanstack/vue-virtual" "^3.0.0-beta.60"
 
 "@iconify-json/lucide@^1":
-  version "1.2.129"
-  resolved "https://registry.yarnpkg.com/@iconify-json/lucide/-/lucide-1.2.129.tgz#6cf8982f5fd63d46f98d3c11c107fd2452ca24d5"
-  integrity sha512-pa0ufllJOXTDIH2BxE/BtWQEf/x46/lINDWcmncICV1/52veZ7KSBzQaVh9xDpmjDs8QN4j2Ex/LWlSSveL3yw==
+  version "1.2.130"
+  resolved "https://registry.yarnpkg.com/@iconify-json/lucide/-/lucide-1.2.130.tgz#5bb8e42066bfb8bc62b2485978d0d035344fb8bf"
+  integrity sha512-rRH6qHEDEaFMOkRJPbT8fBYPLP/2GHi3Q2+iDyTDuX4l5PT/GMKs6Dn9JkL7cHtCkIWKnyYWopmMlFpNek1Fcw==
   dependencies:
     "@iconify/types" "*"
 
 "@iconify/json@^2":
-  version "2.2.525"
-  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.525.tgz#5916213b50a2dee764d313af202c22956690272b"
-  integrity sha512-QB0vDFwtU13MgkiygAi1F6pS9zfTDUQZU0PPBGrU8FIAHpc8HBFNsCOW7r6JAb+OtCq3p+VuqbN4oNxlMdVm8w==
+  version "2.2.526"
+  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.526.tgz#5185540f43c02c2f0ddd151ab1c8a0fb1109668a"
+  integrity sha512-DJ235CZST2dG8h9yOlL91Jhg+4rTHhE3cm5aHhpfrhwSEn/4ScHXZPwjKIFo4DOe05xhyRG0PQqDmRsVJzDiZQ==
   dependencies:
     "@iconify/types" "*"
     pathe "^2.0.3"
@@ -2349,10 +2349,10 @@ postcss-ordered-values@^9.0.2:
     cssnano-utils "^7.0.2"
     postcss-value-parser "^4.2.0"
 
-postcss-prefix-selector@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/postcss-prefix-selector/-/postcss-prefix-selector-2.2.0.tgz#3b7846f011cabbf21733e9b94a52484f11d506c6"
-  integrity sha512-pGKK57v2SXKo5CD41tAnFh82Y+cxvS3lgTtt7e2YatH1nS3ADTI+U3Lk/NfG+xBz9fyU0KAYoBs1YVwqmGZ9nA==
+postcss-prefix-selector@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/postcss-prefix-selector/-/postcss-prefix-selector-2.2.1.tgz#bfad268a15b2a7acff398fbc6aabde92f9b7f5ec"
+  integrity sha512-oMvY0GLVjg6b/N09B4h/xWYczc+LsX1O+laIpXDBbP6tZll+Cj5kXxdI0IZ23NOQ+XIko8VDsCFj+bhgYsmP8g==
 
 postcss-reduce-initial@^9.0.2:
   version "9.0.2"

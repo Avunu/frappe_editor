@@ -147,16 +147,16 @@
     "@tanstack/vue-virtual" "^3.0.0-beta.60"
 
 "@iconify-json/lucide@^1":
-  version "1.2.134"
-  resolved "https://registry.yarnpkg.com/@iconify-json/lucide/-/lucide-1.2.134.tgz#a536cf64147ec89c98933306a09d1729193fcb0a"
-  integrity sha512-MXzwT7H8Ii/aGN6NLtMbMLDaxLYsOxCKEdW0F5h3MemNUaUBqAxr9nz0mPlXzozd/piQyrdSiUyk0t5b5ErADg==
+  version "1.2.135"
+  resolved "https://registry.yarnpkg.com/@iconify-json/lucide/-/lucide-1.2.135.tgz#95c9d7a0afe9cbe5a3776207ab27b15164154697"
+  integrity sha512-M2RbCJMe/ZwRzGBxNGbqP3kEQ74iJjQyJsw5FgVQw+Kp8eJPQF1S19fiGJChG4yYLg73c8Z/fMnm07GTXUxmQA==
   dependencies:
     "@iconify/types" "*"
 
 "@iconify/json@^2":
-  version "2.2.530"
-  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.530.tgz#5129102e861359a0b0473d0f1c8f37517b8662ee"
-  integrity sha512-BW//xItEASwJNDEqhUMh6XTWnRTe/zV3V6wDMyMMy7WHHaN+14HKPkzU6lV/1Cz52wb+67Z8S9S7XahSVmjiPQ==
+  version "2.2.531"
+  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.531.tgz#a5b3b2b54068c65ed2d1781b7e1fabe5ba989ce3"
+  integrity sha512-l6gaD4Pde01hDbHDjPJUTr+8oZU5qW+ZzzsJflFTnHx7hpl+ata2jlMLkApM/aljISjFWUYYxnaLoFHkCLn3QA==
   dependencies:
     "@iconify/types" "*"
     pathe "^2.0.3"

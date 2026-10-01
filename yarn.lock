@@ -159,9 +159,9 @@
     "@iconify/types" "*"
 
 "@iconify/json@^2":
-  version "2.2.534"
-  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.534.tgz#4ceec38e869636a28ed5c7f360060ac7a3879a27"
-  integrity sha512-Des3a8sfIHXnKEsj43K0uSR4ibWtKVsuDumFQq6G/GpEMA449PdZn+fk2mC7nDcIax8MwkAQndAM19uX/xG0xg==
+  version "2.2.535"
+  resolved "https://registry.yarnpkg.com/@iconify/json/-/json-2.2.535.tgz#393e49fdf380f1c633c460af60bf0527191a66a7"
+  integrity sha512-nAV60ACUSHwnsb6fsp+letHlNkrwO4vzBtcC6B4EDHErQQfezk7E3nJdnwJjve6OCfMNO0uVT5Vrgna9/NCmXw==
   dependencies:
     "@iconify/types" "*"
     pathe "^2.0.3"
@@ -1262,7 +1262,7 @@ cssesc@^3.0.0:
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
-cssnano-preset-default@^9.1.0:
+cssnano-preset-default@^9.1.1:
   version "9.1.2"
   resolved "https://registry.yarnpkg.com/cssnano-preset-default/-/cssnano-preset-default-9.1.2.tgz#73169e3012b0a460dc9051d0690a3b740a918e0a"
   integrity sha512-prjUo7JkR3JD74ODNuBwhz1c/DyQLtj1Te0VijEI7PCY8So+Y1KYk84tQAP2F74Rmb9NUPzQjUCmLrn5MbjctA==
@@ -1304,12 +1304,12 @@ cssnano-utils@^8.0.0, cssnano-utils@^8.0.1:
   dependencies:
     "@csstools/css-tokenizer" "^4.0.2"
 
-cssnano@^9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-9.1.0.tgz#cfe7d39ef987acdb86479a491d7ae0c7b9de374f"
-  integrity sha512-ae04R4AveAXRs1M29hDNrKcfsLv/Ef2nA21wnCaWKqcMcCEUGBx8uRz4JYvYkArF5agDW1hhv1c9sr1d+6dT8w==
+cssnano@^9.1.1:
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-9.1.1.tgz#95f2efa4c3c9b919d469d0e5eaeb7cb6637f357f"
+  integrity sha512-Jm3JBThKaUOo6Q9Buyjez+ww/SsgbwmLgg8H5fIf+wAAv5clG2x1KupoQR2PejzEbRyTVqVu93nORWT/320J/g==
   dependencies:
-    cssnano-preset-default "^9.1.0"
+    cssnano-preset-default "^9.1.1"
 
 csso@^5.0.5:
   version "5.0.5"

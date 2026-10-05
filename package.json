@@ -14,7 +14,7 @@
     "@iconify/vue": "^5",
     "@tiptap/core": "^3",
     "@tiptap/pm": "^3",
-    "frappe-ui": "^0.1",
+    "frappe-ui": "^1.0",
     "vue": "^3"
   },
   "devDependencies": {
@@ -23,10 +23,10 @@
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "@vitejs/plugin-vue": "^6",
     "autoprefixer": "^10.6.1",
-    "baseline-browser-mapping": "^2.11.26",
-    "cssnano": "^9.1.2",
+    "baseline-browser-mapping": "^2.11.27",
+    "cssnano": "^9.2.0",
     "postcss": "^8",
-    "postcss-minify-selectors": "^9.0.5",
+    "postcss-minify-selectors": "^9.0.6",
     "postcss-modules": "^9.0.1",
     "postcss-prefix-selector": "^2.2.1",
     "postcss-rename": "^0.8.1",

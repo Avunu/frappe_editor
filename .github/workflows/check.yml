@@ -16,13 +16,26 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
+          # Matches the pkgs.nodejs_22 pinned in flake.nix.
           node-version: 22
           cache: yarn
 
       - run: yarn install --frozen-lockfile
 
-      # `yarn build` is a plain `vite build` with no bench dependency, so it runs clean
-      # in CI. It exercises the whole Tailwind 3 + postcss chain (nesting, purgecss,
-      # cssnano, the prefix/rename passes), which is exactly what a bad dependency bump
-      # breaks — including any attempt to slip past the tailwindcss < 4 cap.
-      - run: yarn build
+      - run: yarn typecheck
+
+      - run: yarn lint
+
+      - run: yarn format:check
+
+      - run: yarn test
+
+      # Not `yarn build`: that chains update-assets.mjs, which resolves ../../sites and
+      # rewrites a bench's assets.json -- there is no bench in CI. Build the Vite bundle
+      # directly; it is what a dependency bump can actually break. It exercises the whole
+      # Tailwind 3 + PostCSS chain, including any attempt to slip past the tailwindcss < 4 cap.
+      - run: yarn build:bundle
+
+      # The bundle loads on every desk page, so a rule that escapes `.frappe-editor-root`
+      # restyles the whole desk. A frappe-ui bump is the usual way one gets in.
+      - run: yarn check:scope

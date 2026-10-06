@@ -1,12 +1,23 @@
-#headlessui-portal-root {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-}
+/* Copyright (c) 2026, Avunu LLC and contributors
+   For license information, please see license.txt */
 
+/* Every rule in this file is re-scoped to `.frappe-editor-root` at build time
+   (build/scope.ts), so Tailwind's preflight and frappe-ui's tokens style the
+   editor without touching the rest of the desk. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* The desk's own font; frappe-ui would otherwise fall back to its Inter stack. */
+.frappe-editor-root {
+	font-family: var(--font-stack, inherit);
+}
+
+/* The host frappe-ui overlays teleport into: a zero-size layer above the
+   desk's modals, so what opens inside it is never clipped or covered. */
+.frappe-editor-root.frappe-editor-portal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1200;
+}

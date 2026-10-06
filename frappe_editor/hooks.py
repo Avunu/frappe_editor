@@ -6,5 +6,5 @@ app_description = (
 )
 app_email = "mail@avu.nu"
 app_license = "mit"
-app_include_js = "/assets/frappe_editor/dist/frappe-editor.umd.js"
-app_include_css = "/assets/frappe_editor/dist/frappe-editor.css"
+app_include_js = "frappe_editor.bundle.js"
+app_include_css = "frappe_editor.bundle.css"

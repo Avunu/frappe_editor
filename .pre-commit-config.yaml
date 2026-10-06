@@ -32,8 +32,9 @@ repos:
     rev: v0.45.0
     hooks:
       - id: oxfmt
-        files: "frappe_editor.*"
-        types_or: [javascript, vue, scss]
+        # The JS/TS sources live in src/ and build/, not under frappe_editor/.
+        files: '^(src/|build/|vite\.config\.ts$|tailwind\.config\.js$|update-assets\.mjs$)'
+        types_or: [javascript, ts, vue, css]
         exclude: |
           (?x)^(
               frappe_editor/public/dist/.*|

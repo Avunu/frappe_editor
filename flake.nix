@@ -1,5 +1,5 @@
 {
-  description = "SVG Pattern to PDF Generator shell";
+  description = "frappe_editor development shell";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -17,7 +17,8 @@
     {
       devShells.${system}.default = pkgs.mkShell {
         packages = [
-          # Yarn for JavaScript dependencies
+          # Node and Yarn for the Vite build and its dependencies
+          pkgs.nodejs_22
           pkgs.yarn
         ];
       };

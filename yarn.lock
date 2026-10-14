@@ -1453,9 +1453,9 @@ fill-range@^7.1.1:
     to-regex-range "^5.0.1"
 
 frappe-ui@^1.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/frappe-ui/-/frappe-ui-1.0.0.tgz#6af1f17800ed2b3eb382feb9895baad7293eb673"
-  integrity sha512-xtT57o06Cfy03TrJMl/HKwO6LfiphnlQrokIII/7PI51P0v3ZH77Gg6tsrtQczlE53D3+BE0Nm8f1MS6jiceHA==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/frappe-ui/-/frappe-ui-1.0.1.tgz#b6e5d80a6f09dc89bd4565cfb9d1025726f4128c"
+  integrity sha512-Vrn9h8MmH2mOdsTCy+0L8lZ4bRn4QgXane9HAhGlppwGNiQtuAkQ3OPzq9gOAhjGqSbTtRbXq4jr4V6W6r7K+Q==
   dependencies:
     "@codemirror/autocomplete" "^6.0.0"
     "@codemirror/commands" "^6.0.0"

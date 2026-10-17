@@ -5,9 +5,7 @@ description = "Incorporate the Text Editor control from Frappe UI into the Frapp
 requires-python = ">=3.14"
 readme = "README.md"
 dynamic = ["version"]
-dependencies = [
-	# "frappe~=15.0.0" # Installed and managed by bench.
-]
+dependencies = []
 
 [build-system]
 requires = ["flit_core >=3.4,<4"]

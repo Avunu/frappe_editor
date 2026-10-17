@@ -144,5 +144,6 @@ export function installTextEditorControl(): void {
 		}
 	}
 
-	frappe.ui.form.ControlTextEditor = ControlTextEditor;
+	// FrappeControl is the slice of frappe-types' BaseControl this class uses.
+	frappe.ui.form.ControlTextEditor = ControlTextEditor as unknown as typeof frappe.ui.form.ControlTextEditor;
 }

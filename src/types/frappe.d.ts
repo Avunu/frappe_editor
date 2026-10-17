@@ -1,9 +1,11 @@
 // Copyright (c) 2026, Avunu LLC and contributors
 // For license information, please see license.txt
 
+/// <reference types="frappe-types/global" />
+
 /**
- * The slice of the Frappe desk's globals this bundle touches. Frappe ships no
- * type declarations, so only what `control.ts` and `upload.ts` use is listed.
+ * The desk globals (`frappe`, `__`) come from frappe-types. This file only
+ * adds the control shape `control.ts` builds on.
  */
 
 /** What every Frappe form control provides; `ControlCode` is the base used here. */
@@ -21,13 +23,3 @@ interface FrappeControl {
 	refresh(): void;
 	parse_validate_and_set_in_model(value: unknown): Promise<unknown>;
 }
-
-declare const frappe: {
-	ui: { form: { ControlCode: unknown; ControlTextEditor: unknown } };
-	dom: { remove_script_and_style(html: string): string };
-	/** The session's CSRF token, sent with uploads. */
-	csrf_token?: string;
-};
-
-/** Frappe's translation function. */
-declare function __(text: string, replace?: unknown, context?: string): string;

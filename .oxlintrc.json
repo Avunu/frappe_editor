@@ -52,31 +52,6 @@
 			"rules": {
 				"import/no-unassigned-import": "off"
 			}
-		},
-		{
-			"files": ["src/FrappeEditor.vue", "src/control.ts", "src/types/frappe-ui-editor.d.ts", "src/upload.ts"],
-			"rules": {
-				"typescript/no-explicit-any": "off"
-			}
-		},
-		{
-			"files": ["src/upload.ts"],
-			"rules": {
-				"unicorn/prefer-add-event-listener": "off"
-			}
-		},
-		{
-			"files": ["src/index.ts"],
-			"rules": {
-				"import/no-unassigned-import": "off"
-			}
-		},
-		{
-			"files": ["build/check-scope.mjs"],
-			"rules": {
-				"no-console": "off",
-				"import/no-named-as-default-member": "off"
-			}
 		}
 	]
 }

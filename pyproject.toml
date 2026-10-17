@@ -36,6 +36,11 @@ docstring-code-format = true
 schema = 1
 profile = "github:Avunu/frappe-standards-profile/main"
 frappe-major = 16
+# Nightly runs these after `bench build`, with the site up: the built and registered desk
+# bundle is checked there, and a missing one fails rather than skips.
+nightly-suites = [
+	"FRAPPE_EDITOR_REQUIRE_BUNDLE=1 frappe-test --reuse-site --keep-up --module frappe_editor.tests.test_hooks",
+]
 
 [tool.frappe-nix.dev-shell]
 frappe-nix-url = "github:Avunu/frappe-nix/a216ce95ce051fe0bc5b95f112fcb85529910ede"

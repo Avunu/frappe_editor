@@ -36,11 +36,9 @@ docstring-code-format = true
 schema = 1
 profile = "github:Avunu/frappe-standards-profile/main"
 frappe-major = 16
-# check.yml stays until the managed CI callers land, so the PR keeps a gate; drop this then.
-retire-keep = [".github/workflows/check.yml"]
 
 [tool.frappe-nix.dev-shell]
-frappe-nix-url = "github:Avunu/frappe-nix/b4d0f2784987187e6286a957d5cade3a400730ae"
+frappe-nix-url = "github:Avunu/frappe-nix/a216ce95ce051fe0bc5b95f112fcb85529910ede"
 
 # The desk bundle: Vue SFCs built by the root vite.config.ts, checked by vue-tsc through
 # the TS 5 alias (TS 7's tsc can't check .vue imports), so it keeps its own tsconfig.json.
@@ -70,7 +68,7 @@ exclude_also = ["if TYPE_CHECKING:", "raise NotImplementedError", "@(abc\\.)?abs
 fail_under = 80
 
 [tool.vulture]
-exclude = [".venv/", "node_modules/", ".frappe-nix/", ".dev-dist/"]
+exclude = [".venv/", "node_modules/", ".frappe-nix/", ".dev-dist/", ".devenv/", ".direnv/"]
 
 [tool.test_utils.static-analysis]
 whitelist = ["frappe.*"]

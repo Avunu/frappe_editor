@@ -14,7 +14,7 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
-import postcss from "postcss";
+import { parse } from "postcss";
 
 const SCOPE = ".frappe-editor-root";
 const CSS_DIR = path.resolve(
@@ -63,7 +63,7 @@ let rules = 0;
 const leaks = new Set();
 
 for (const file of files) {
-	postcss.parse(fs.readFileSync(path.join(CSS_DIR, file), "utf8")).walkRules((rule) => {
+	parse(fs.readFileSync(path.join(CSS_DIR, file), "utf8")).walkRules((rule) => {
 		// Keyframe steps (`from`, `50%`) are not selectors.
 		if (rule.parent?.type === "atrule" && rule.parent.name.endsWith("keyframes")) return;
 		rules++;
@@ -78,4 +78,4 @@ if (leaks.size) {
 	for (const selector of leaks) console.error(`  ${selector}`);
 	process.exit(1);
 }
-console.log(`ok: all ${rules} rules are scoped to ${SCOPE}`);
+process.stdout.write(`ok: all ${rules} rules are scoped to ${SCOPE}\n`);

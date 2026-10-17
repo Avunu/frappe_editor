@@ -41,30 +41,6 @@ frappe-major = 16
 # check.yml stays until the managed CI callers land, so the PR keeps a gate; drop this then.
 retire-keep = [".github/workflows/check.yml"]
 
-# Until the follow-up typing PR: the four files below still use `any` (frappe-ui ships no types for
-# its editor), which the locked typescript/no-explicit-any rule refuses. Restore the lock with it.
-[tool.frappe-nix.js]
-locked-rules = false
-
-[[tool.frappe-nix.js.oxlint.overrides]]
-files = ["src/FrappeEditor.vue", "src/control.ts", "src/types/frappe-ui-editor.d.ts", "src/upload.ts"]
-rules = { "typescript/no-explicit-any" = "off" }
-
-# XMLHttpRequest's on<event> handlers, one per request: same behaviour, left for the typing PR.
-[[tool.frappe-nix.js.oxlint.overrides]]
-files = ["src/upload.ts"]
-rules = { "unicorn/prefer-add-event-listener" = "off" }
-
-# The desk entry's stylesheet import, as the managed *.bundle.ts override allows.
-[[tool.frappe-nix.js.oxlint.overrides]]
-files = ["src/index.ts"]
-rules = { "import/no-unassigned-import" = "off" }
-
-# A build-time CLI check: it reports on stdout, and postcss's default export is its API.
-[[tool.frappe-nix.js.oxlint.overrides]]
-files = ["build/check-scope.mjs"]
-rules = { "no-console" = "off", "import/no-named-as-default-member" = "off" }
-
 [tool.frappe-nix.dev-shell]
 frappe-nix-url = "github:Avunu/frappe-nix/b4d0f2784987187e6286a957d5cade3a400730ae"
 

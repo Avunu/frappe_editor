@@ -44,6 +44,7 @@ import {
 	type TiptapEditor,
 	type UploadFunction,
 } from "frappe-ui/editor";
+import type { EditorEvents } from "@tiptap/core";
 import { BUBBLE_MENU, TABLE_MENU, TOOLBAR } from "./toolbar";
 
 /**
@@ -117,7 +118,7 @@ const extensions = markRaw([
  */
 let instance: TiptapEditor | null = null;
 
-function onUpdate({ editor: tiptap, transaction }: { editor: TiptapEditor; transaction: any }) {
+function onUpdate({ editor: tiptap, transaction }: EditorEvents["update"]) {
 	if (!transaction.docChanged) return;
 	emit("change", tiptap.getHTML(), tiptap.isEmpty);
 }

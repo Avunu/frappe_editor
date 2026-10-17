@@ -6,16 +6,22 @@
  *
  * frappe-ui ships raw TypeScript / Vue sources that don't pass this repo's
  * strict compiler settings, so `tsconfig.json` maps the package to this
- * declaration instead of type-checking the library. Components and the TipTap
- * editor instance are typed loosely; add an export here when the bundle starts
- * using another one.
+ * declaration instead of type-checking the library. Components are typed as
+ * plain Vue components (their props are frappe-ui's own concern); add an export
+ * here when the bundle starts using another one.
  */
 
-// Untyped on purpose: props and slots are frappe-ui's own concern.
-type AnyComponent = any;
+// The extensions whose commands the toolbar chains (toggleUnderline,
+// toggleTaskList, toggleCodeBlock) add them to TipTap's `Commands` here.
+/// <reference types="@tiptap/extension-underline" />
+/// <reference types="@tiptap/extension-list" />
+/// <reference types="@tiptap/extension-code-block" />
+
+import type { Editor as CoreEditor } from "@tiptap/core";
+import type { Component } from "vue";
 
 /** TipTap's `Editor` instance, as passed to menu item callbacks. */
-export type TiptapEditor = any;
+export type TiptapEditor = CoreEditor;
 
 export interface UploadedMedia {
 	file_url: string;
@@ -33,17 +39,17 @@ export type UploadFunction = (
 	options?: { signal?: AbortSignal; onProgress?: (progress: MediaUploadProgress) => void },
 ) => Promise<UploadedMedia>;
 
-export const Editor: AnyComponent;
-export const EditorContent: AnyComponent;
-export const EditorFixedMenu: AnyComponent;
-export const EditorBubbleMenu: AnyComponent;
-export const EditorTableMenu: AnyComponent;
+export const Editor: Component;
+export const EditorContent: Component;
+export const EditorFixedMenu: Component;
+export const EditorBubbleMenu: Component;
+export const EditorTableMenu: Component;
 
 /** A toolbar button (frappe-ui `menu.ts`). */
 export interface CommandMenuItem {
 	label: string;
 	/** A `lucide-*` icon name or a component. */
-	icon?: AnyComponent | string;
+	icon?: Component | string;
 	action: (editor: TiptapEditor) => boolean | void | Promise<boolean | void>;
 	isActive?: (editor: TiptapEditor) => boolean;
 	isDisabled?: (editor: TiptapEditor) => boolean;
@@ -54,7 +60,7 @@ export interface CommandMenuItem {
 /** A dropdown of toolbar buttons. */
 export interface MenuGroupItem {
 	type: "group";
-	icon?: AnyComponent | string;
+	icon?: Component | string;
 	label: string;
 	items: CommandMenuItem[];
 }

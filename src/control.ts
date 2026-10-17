@@ -27,7 +27,7 @@ interface EditorState {
 	maxHeight: string;
 }
 
-type ControlConstructor = new (...args: any[]) => FrappeControl;
+type ControlConstructor = new (...args: never[]) => FrappeControl;
 
 export function installTextEditorControl(): void {
 	const Base = frappe.ui.form.ControlCode as unknown as ControlConstructor;

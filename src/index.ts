@@ -9,7 +9,9 @@
  * built after this runs use it, with no change to doctypes or stored values.
  */
 
-import "./style.css";
+// The stylesheet first, so Tailwind's base layer precedes frappe-ui's own CSS.
+// A re-export (of nothing) rather than a bare import: the module runs either way.
+export * from "./style.css";
 import { installTextEditorControl } from "./control";
 
 installTextEditorControl();

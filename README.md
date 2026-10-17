@@ -31,16 +31,16 @@ bench build --app frappe_editor
 
 ## Development
 
-Requires Node 22+ and yarn.
+Requires Node 24+ and yarn. `nix develop` (or direnv) gives you both, plus the git hooks and a dev bench.
 
-| Command | What it does |
-| --- | --- |
-| `yarn build` | Builds the bundle, then updates `sites/assets/assets.json` |
-| `yarn dev` | Builds and registers the bundle, then rebuilds on change under a fixed file name. Reload the desk to pick it up |
-| `yarn typecheck` | Type-checks the code |
-| `yarn lint` / `yarn format` | Runs oxlint and oxfmt |
-| `yarn test` | Unit-tests the CSS scoping |
-| `yarn check:scope` | Checks that the built stylesheet cannot match outside the editor |
+| Command                     | What it does                                                                                                                          |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `yarn build`                | Builds the bundle, then registers it in the bench's `sites/assets/assets.json` (`scripts/vite-register.mjs`; skipped outside a bench) |
+| `yarn dev`                  | Builds and registers the bundle, then rebuilds on change under a fixed file name. Reload the desk to pick it up                       |
+| `yarn typecheck`            | Type-checks the code                                                                                                                  |
+| `yarn lint` / `yarn format` | Runs oxlint and oxfmt                                                                                                                 |
+| `yarn test`                 | Unit-tests the CSS scoping                                                                                                            |
+| `yarn check:scope`          | Checks that the built stylesheet cannot match outside the editor                                                                      |
 
 Where things live:
 

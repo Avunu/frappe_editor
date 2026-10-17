@@ -14,10 +14,7 @@
 import { createApp as createVueApp, type App, type Component } from "vue";
 import { PORTAL_TARGET_KEY, adopt, portalHost } from "./scope";
 
-export function createApp(
-	rootComponent: Component,
-	rootProps?: Record<string, unknown> | null,
-): App {
+export function createApp(rootComponent: Component, rootProps?: Record<string, unknown> | null): App {
 	const app = createVueApp(rootComponent, rootProps);
 	// A getter, so the host is created when the first overlay opens.
 	app.provide(PORTAL_TARGET_KEY, portalHost);

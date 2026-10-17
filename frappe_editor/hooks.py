@@ -1,3 +1,6 @@
+# Copyright (c) 2026, Avunu LLC and contributors
+# For license information, please see license.txt
+
 app_name = "frappe_editor"
 app_title = "Frappe UI Editor Integration"
 app_publisher = "Avunu LLC"

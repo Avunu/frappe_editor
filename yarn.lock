@@ -855,12 +855,24 @@
   dependencies:
     "@types/unist" "*"
 
+"@types/jquery@^3.5":
+  version "3.5.34"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.5.34.tgz#c1993eaac0db03cf9db974976dd8f07bbf7c5708"
+  integrity sha512-3m3939S3erqmTLJANS/uy0B6V7BorKx7RorcGZVjZ62dF5PAGbKEDZK1CuLtKombJkFA2T1jl8LAIIs7IV6gBQ==
+  dependencies:
+    "@types/sizzle" "*"
+
 "@types/node@^26.6.5":
   version "26.6.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-26.6.5.tgz#cb35209e7767c503551b5fa42a48231c7441d979"
   integrity sha512-uMzsv9stDdofIZBx4UGh4Z9ZgXnGC9seRDscilBcTHAeOFk67MZg/k9bWVfO+bk4qZmG+l52hRnLwUiH2LnJTg==
   dependencies:
     undici-types "~8.9.0"
+
+"@types/sizzle@*":
+  version "2.3.10"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.10.tgz#277a542aff6776d8a9b15f2ac682a663e3e94bbd"
+  integrity sha512-TC0dmN0K8YcWEAEfiPi5gJP14eJe30TTGjkvek3iM/1NdHHsdCA/Td6GvNndMOo/iSnIsZ4HuuhrYPDAmbxzww==
 
 "@types/trusted-types@^2.0.7":
   version "2.0.7"
@@ -1444,6 +1456,13 @@ fill-range@^7.1.1:
   integrity sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==
   dependencies:
     to-regex-range "^5.0.1"
+
+frappe-types@^16.5.0:
+  version "16.5.0"
+  resolved "https://registry.yarnpkg.com/frappe-types/-/frappe-types-16.5.0.tgz#094b3771b31fb9cce6f4ecea3964406af946f594"
+  integrity sha512-FNeR2hgw5ZjifNylxhsVOJGfHP6D/e1BydupGlpjMOJxh1wWrhu8EEsZT2/aNJxSdVM8IR5jFWd19jCsjJTWMA==
+  dependencies:
+    "@types/jquery" "^3.5"
 
 frappe-ui@^1.0:
   version "1.0.2"

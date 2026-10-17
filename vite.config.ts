@@ -6,7 +6,7 @@
  * stylesheet, into `frappe_editor/public/dist/`.
  *
  * The `*.bundle.[hash].*` names are what Frappe's own asset indexer
- * (`bench build --using-cached`) and `update-assets.mjs` map to the
+ * (`bench build --using-cached`) and `scripts/vite-register.mjs` map to the
  * `frappe_editor.bundle.js` / `.css` keys in `hooks.py`.
  *
  * The entry lives in `src/`, not `frappe_editor/public/`: Frappe's esbuild
@@ -61,8 +61,9 @@ const editorPopups = (): Plugin => ({
 export default defineConfig(({ mode }) => {
 	// `yarn dev` rebuilds on every change. A fresh hash each time would leave
 	// assets.json pointing at the first build, so development builds keep one
-	// name (Frappe reads `dev` as the hash: `frappe_editor.bundle.dev.js`).
-	const hash = mode === "development" ? "dev" : "[hash]";
+	// name, read as the hash: `frappe_editor.bundle.development.js`. vite-register
+	// only maps a hash of six or more characters, so `dev` would not register.
+	const hash = mode === "development" ? "development" : "[hash]";
 
 	return {
 		plugins: [editorPopups(), vue(), scopeCss()],

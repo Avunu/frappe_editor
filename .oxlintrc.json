@@ -1,15 +1,82 @@
 {
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": [
-    "typescript",
-    "unicorn",
-    "oxc"
-  ],
-  "categories": {
-    "correctness": "error"
-  },
-  "rules": {},
-  "env": {
-    "builtin": true
-  }
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["typescript", "unicorn", "oxc", "import"],
+	"categories": {
+		"correctness": "error",
+		"suspicious": "error",
+		"perf": "warn",
+		"pedantic": "off"
+	},
+	"env": {
+		"builtin": true,
+		"es2024": true,
+		"browser": true
+	},
+	"rules": {
+		"typescript/no-explicit-any": "error",
+		"typescript/ban-ts-comment": "error",
+		"typescript/consistent-type-imports": "error",
+		"no-console": [
+			"warn",
+			{
+				"allow": ["error", "warn"]
+			}
+		],
+		"import/no-cycle": "off",
+		"no-underscore-dangle": "off",
+		"unicorn/consistent-function-scoping": "off",
+		"unicorn/no-array-sort": "off"
+	},
+	"ignorePatterns": [
+		"frappe_editor/public/dist/**",
+		".frappe-nix/**",
+		".dev-dist/**",
+		"nix/**",
+		"docs-site/**",
+		"types/doctypes.d.ts"
+	],
+	"overrides": [
+		{
+			"files": ["scripts/**", "marketplace/**", "ci/**", "test/**"],
+			"env": {
+				"node": true
+			},
+			"rules": {
+				"no-console": "off",
+				"no-await-in-loop": "off",
+				"import/no-unassigned-import": "off"
+			}
+		},
+		{
+			"files": ["frappe_editor/public/js/*.bundle.ts", "frappe_editor/public/js/*.bundle.js"],
+			"rules": {
+				"import/no-unassigned-import": "off"
+			}
+		},
+		{
+			"files": ["src/FrappeEditor.vue", "src/control.ts", "src/types/frappe-ui-editor.d.ts", "src/upload.ts"],
+			"rules": {
+				"typescript/no-explicit-any": "off"
+			}
+		},
+		{
+			"files": ["src/upload.ts"],
+			"rules": {
+				"unicorn/prefer-add-event-listener": "off"
+			}
+		},
+		{
+			"files": ["src/index.ts"],
+			"rules": {
+				"import/no-unassigned-import": "off"
+			}
+		},
+		{
+			"files": ["build/check-scope.mjs"],
+			"rules": {
+				"no-console": "off",
+				"import/no-named-as-default-member": "off"
+			}
+		}
+	]
 }

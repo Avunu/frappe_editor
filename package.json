@@ -1,46 +1,60 @@
 {
-  "name": "frappe-editor",
-  "private": false,
-  "version": "0.1.1",
-  "type": "module",
-  "description": "Frappe Editor Integration",
-  "scripts": {
-    "dev": "vite build --mode development && node update-assets.mjs && vite build --mode development --watch",
-    "build": "vite build && node update-assets.mjs",
-    "build:bundle": "vite build",
-    "typecheck": "node scripts/vue-tsc.cjs --noEmit",
-    "lint": "oxlint src build vite.config.ts update-assets.mjs",
-    "lint:fix": "oxlint --fix src build vite.config.ts update-assets.mjs",
-    "format": "oxfmt --write src build vite.config.ts tailwind.config.js update-assets.mjs",
-    "format:check": "oxfmt --check src build vite.config.ts tailwind.config.js update-assets.mjs",
-    "upgrade": "npx npm-check-updates -u && yarn install",
-    "check:scope": "node build/check-scope.mjs",
-    "test": "node --test \"build/**/*.test.ts\""
-  },
-  "dependencies": {
-    "@iconify-json/lucide": "^1",
-    "frappe-ui": "^1.0",
-    "vue": "^3",
-    "vue-router": "^5.4.0"
-  },
-  "devDependencies": {
-    "@types/node": "^26.6.5",
-    "@vitejs/plugin-vue": "^6.0.10",
-    "oxfmt": "^0.73.0",
-    "oxlint": "^1.88.0",
-    "postcss": "^8.5.0",
-    "postcss-prefix-selector": "^2.2.1",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^7.0.2",
-    "typescript5": "npm:typescript@^5.9.3",
-    "vite": "^8.3.4",
-    "vue-tsc": "^3.3.13"
-  },
-  "resolutions": {
-    "prosemirror-keymap": "^1.2.3",
-    "prosemirror-model": "^1.25.12",
-    "prosemirror-state": "^1.4.4",
-    "prosemirror-transform": "^1.12.0",
-    "prosemirror-view": "^1.42.2"
-  }
+	"name": "frappe-editor",
+	"version": "0.1.1",
+	"private": true,
+	"description": "Frappe Editor Integration",
+	"license": "MIT",
+	"author": "Avunu LLC",
+	"type": "module",
+	"scripts": {
+		"dev": "vite build --mode development && node scripts/vite-register.mjs && vite build --mode development --watch",
+		"build": "vite build && node scripts/vite-register.mjs",
+		"build:bundle": "vite build",
+		"typecheck": "node scripts/vue-tsc.cjs --noEmit",
+		"lint": "oxlint",
+		"lint:fix": "oxlint --fix",
+		"format": "oxfmt",
+		"format:check": "oxfmt --check",
+		"upgrade": "npx npm-check-updates -u && yarn install",
+		"check:scope": "node build/check-scope.mjs",
+		"test": "node --test \"build/**/*.test.ts\"",
+		"lint:py": "uv run --frozen --project tools ruff check . && uv run --frozen --project tools ruff format --check .",
+		"typecheck:py": "uv run --frozen --project tools ty check --python \"${FRAPPE_BENCH_ROOT:-.frappe-nix/bench}/env\"",
+		"check": "yarn -s format:check && yarn -s lint && yarn -s typecheck"
+	},
+	"dependencies": {
+		"@iconify-json/lucide": "^1",
+		"frappe-ui": "^1.0",
+		"vue": "^3",
+		"vue-router": "^5.4.0"
+	},
+	"devDependencies": {
+		"@types/node": "^26.6.5",
+		"@vitejs/plugin-vue": "^6.0.10",
+		"frappe-types": "^16.5.0",
+		"oxfmt": "^0.73.0",
+		"oxlint": "^1.88.0",
+		"postcss": "^8.5.0",
+		"postcss-prefix-selector": "^2.2.1",
+		"tailwindcss": "^3.4.17",
+		"typescript": "^7.0.2",
+		"typescript5": "npm:typescript@^5.9.3",
+		"vite": "^8.3.4",
+		"vue-tsc": "^3.3.13"
+	},
+	"resolutions": {
+		"prosemirror-keymap": "^1.2.3",
+		"prosemirror-model": "^1.25.12",
+		"prosemirror-state": "^1.4.4",
+		"prosemirror-transform": "^1.12.0",
+		"prosemirror-view": "^1.42.2"
+	},
+	"engines": {
+		"node": ">=24"
+	},
+	"packageManager": "yarn@1.22.22",
+	"frappe": {
+		"major": "16",
+		"branch": "version-16"
+	}
 }

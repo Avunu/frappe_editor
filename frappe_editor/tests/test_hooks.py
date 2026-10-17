@@ -45,11 +45,18 @@ class TestHooks(IntegrationTestCase):
 
 
 class TestBuiltAssets(IntegrationTestCase):
-	"""Only where the bundle was built (`yarn build`, `bench build`); CI's test job does not build."""
+	"""Only where the bundle was built and registered (`yarn build`, `bench build`).
+
+	CI's test job does not build. CI's typecheck job builds the bundle alone
+	(`yarn build:bundle`), with no bench to register it in, and so does a local
+	`frappe-nix gate typecheck`: a bench without `assets.json` skips too.
+	"""
 
 	def setUp(self):
 		if not (DIST / "manifest.json").exists():
 			self.skipTest("the Vite bundle is not built here")
+		if not frappe.read_file("assets/assets.json"):
+			self.skipTest("no bundle is registered on this bench (sites/assets/assets.json)")
 
 	def test_each_bundle_resolves_to_a_hashed_file(self):
 		for bundle in BUNDLES.values():

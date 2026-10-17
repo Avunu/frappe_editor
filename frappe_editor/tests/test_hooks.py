@@ -9,6 +9,7 @@ bench's `sites/assets/assets.json`, which `scripts/vite-register.mjs` fills in.
 """
 
 import json
+import os
 import re
 from pathlib import Path
 
@@ -45,11 +46,30 @@ class TestHooks(IntegrationTestCase):
 
 
 class TestBuiltAssets(IntegrationTestCase):
-	"""Only where the bundle was built (`yarn build`, `bench build`); CI's test job does not build."""
+	"""Only where the bundle was built and registered (`yarn build`, `bench build`).
+
+	CI's test job does not build. CI's typecheck job builds the bundle alone
+	(`yarn build:bundle`), with no bench to register it in, and so does a local
+	`frappe-nix gate typecheck`, so both skip: the first has no `dist/`, the
+	second no `assets.json` entry for this app. The nightly integration job runs
+	`bench build` and then this module with `FRAPPE_EDITOR_REQUIRE_BUNDLE=1`
+	(`nightly-suites` in pyproject.toml), where a missing bundle or registration
+	fails instead of skipping.
+	"""
 
 	def setUp(self):
+		required = os.environ.get("FRAPPE_EDITOR_REQUIRE_BUNDLE") == "1"
 		if not (DIST / "manifest.json").exists():
+			if required:
+				self.fail(f"FRAPPE_EDITOR_REQUIRE_BUNDLE=1 but the Vite bundle is not built ({DIST})")
 			self.skipTest("the Vite bundle is not built here")
+		registered = json.loads(frappe.read_file("assets/assets.json") or "{}")
+		missing = [bundle for bundle in BUNDLES.values() if bundle not in registered]
+		if missing:
+			message = f"sites/assets/assets.json does not register {', '.join(missing)}"
+			if required:
+				self.fail(f"FRAPPE_EDITOR_REQUIRE_BUNDLE=1 but {message}")
+			self.skipTest(f"{message} (built with `yarn build:bundle`, not `yarn build`)")
 
 	def test_each_bundle_resolves_to_a_hashed_file(self):
 		for bundle in BUNDLES.values():

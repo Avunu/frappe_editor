@@ -66,7 +66,7 @@ files = ["build/check-scope.mjs"]
 rules = { "no-console" = "off", "import/no-named-as-default-member" = "off" }
 
 [tool.frappe-nix.dev-shell]
-frappe-nix-url = "github:Avunu/frappe-nix/e95f67f97de1322c89df9ffbc9218c31d4ca83ba"
+frappe-nix-url = "github:Avunu/frappe-nix/b4d0f2784987187e6286a957d5cade3a400730ae"
 
 # The desk bundle: Vue SFCs built by the root vite.config.ts, checked by vue-tsc through
 # the TS 5 alias (TS 7's tsc can't check .vue imports), so it keeps its own tsconfig.json.

@@ -4,7 +4,7 @@
   description = "frappe_editor: Frappe UI Editor Integration";
 
   inputs = {
-    frappe-nix.url = "github:Avunu/frappe-nix/e95f67f97de1322c89df9ffbc9218c31d4ca83ba";
+    frappe-nix.url = "github:Avunu/frappe-nix/b4d0f2784987187e6286a957d5cade3a400730ae";
     nixpkgs.follows = "frappe-nix/nixpkgs";
     frappe = {
       url = "github:frappe/frappe/version-16";

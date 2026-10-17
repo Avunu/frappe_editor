@@ -41,6 +41,7 @@ Requires Node 24+ and yarn. `nix develop` (or direnv) gives you both, plus the g
 | `yarn lint` / `yarn format` | Runs oxlint and oxfmt                                                                                                                 |
 | `yarn test`                 | Unit-tests the CSS scoping                                                                                                            |
 | `yarn check:scope`          | Checks that the built stylesheet cannot match outside the editor                                                                      |
+| `frappe-test --reuse-site`  | Runs the Python smoke tests (hooks, bundle names) on the dev site, with coverage                                                      |
 
 Where things live:
 

@@ -6,12 +6,12 @@
 	"packages": {
 		".": {
 			"release-type": "node",
-			"package-name": "frappe-editor",
+			"package-name": "ui-text-editor",
 			"changelog-path": "CHANGELOG.md",
 			"extra-files": [
 				{
 					"type": "generic",
-					"path": "frappe_editor/__init__.py"
+					"path": "ui_text_editor/__init__.py"
 				}
 			]
 		}

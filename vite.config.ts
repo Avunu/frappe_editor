@@ -2,14 +2,14 @@
 // For license information, please see license.txt
 
 /**
- * Builds the desk bundle: one IIFE, `frappe_editor.bundle.[hash].js`, plus its
- * stylesheet, into `frappe_editor/public/dist/`.
+ * Builds the desk bundle: one IIFE, `ui_text_editor.bundle.[hash].js`, plus its
+ * stylesheet, into `ui_text_editor/public/dist/`.
  *
  * The `*.bundle.[hash].*` names are what Frappe's own asset indexer
  * (`bench build --using-cached`) and `scripts/vite-register.mjs` map to the
- * `frappe_editor.bundle.js` / `.css` keys in `hooks.py`.
+ * `ui_text_editor.bundle.js` / `.css` keys in `hooks.py`.
  *
- * The entry lives in `src/`, not `frappe_editor/public/`: Frappe's esbuild
+ * The entry lives in `src/`, not `ui_text_editor/public/`: Frappe's esbuild
  * compiles every `*.bundle.*` it finds under `public/` on its own, without Vue
  * SFCs, Tailwind or PostCSS, and would clobber this build.
  */
@@ -61,20 +61,20 @@ const editorPopups = (): Plugin => ({
 export default defineConfig(({ mode }) => {
 	// `yarn dev` rebuilds on every change. A fresh hash each time would leave
 	// assets.json pointing at the first build, so development builds keep one
-	// name, read as the hash: `frappe_editor.bundle.development.js`. vite-register
+	// name, read as the hash: `ui_text_editor.bundle.development.js`. vite-register
 	// only maps a hash of six or more characters, so `dev` would not register.
 	const hash = mode === "development" ? "development" : "[hash]";
 
 	return {
 		plugins: [editorPopups(), vue(), scopeCss()],
-		base: "/assets/frappe_editor/dist/",
+		base: "/assets/ui_text_editor/dist/",
 		css: {
 			postcss: {
 				plugins: [tailwindcss({ config: resolve(__dirname, "tailwind.config.js") })],
 			},
 		},
 		build: {
-			outDir: "frappe_editor/public/dist",
+			outDir: "ui_text_editor/public/dist",
 			// The dist folder holds only this build, so clear the previous hash.
 			emptyOutDir: true,
 			manifest: "manifest.json",
@@ -93,10 +93,10 @@ export default defineConfig(({ mode }) => {
 				},
 				output: {
 					format: "iife",
-					entryFileNames: `js/frappe_editor.bundle.${hash}.js`,
+					entryFileNames: `js/ui_text_editor.bundle.${hash}.js`,
 					assetFileNames: (asset) =>
 						asset.names.some((name) => name.endsWith(".css"))
-							? `css/frappe_editor.bundle.${hash}[extname]`
+							? `css/ui_text_editor.bundle.${hash}[extname]`
 							: "assets/[name]-[hash][extname]",
 				},
 			},

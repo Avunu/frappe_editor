@@ -5,8 +5,8 @@ requires-python = "==3.14.*"
 [manifest]
 members = [
     "frappe",
-    "frappe-editor",
-    "frappe-editor-bench",
+    "ui-text-editor",
+    "ui-text-editor-bench",
 ]
 overrides = [
     { name = "click", specifier = "~=8.3.1" },
@@ -835,45 +835,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/59/bd/21a8d447f9c6b6df651753fee40899def1004987a348131112b1d7470390/frappe_bench-5.31.0.tar.gz", hash = "sha256:bcc829befe2fb6c5145cd6f1ebb6d5a8b34bcf58de99cb8a6afc0e88430776c5", size = 112152, upload-time = "2026-06-16T16:24:57.1Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/40/c3/0f254342a130ea07dd054f77bba66651fc7a1910892b747a9b38976baf37/frappe_bench-5.31.0-py3-none-any.whl", hash = "sha256:872af53dbdc60b4b709b553200d05f402c1d64abb1209c160290445592487718", size = 164053, upload-time = "2026-06-16T16:24:55.96Z" },
-]
-
-[[package]]
-name = "frappe-editor"
-source = { editable = "apps/frappe_editor" }
-
-[[package]]
-name = "frappe-editor-bench"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "frappe-bench" },
-    { name = "frappe-runtime" },
-    { name = "setuptools" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "coverage" },
-    { name = "pydantic" },
-    { name = "pytest" },
-    { name = "responses" },
-    { name = "unittest-xml-reporting" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "frappe-bench", specifier = ">=5.29.0" },
-    { name = "frappe-runtime", git = "https://github.com/Avunu/frappe-nix?subdirectory=runtime" },
-    { name = "setuptools" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "coverage", specifier = ">=7.10" },
-    { name = "pydantic", specifier = ">=2.12.5" },
-    { name = "pytest", specifier = ">=9.0.2" },
-    { name = "responses" },
-    { name = "unittest-xml-reporting", specifier = ">=3.2" },
 ]
 
 [[package]]
@@ -2538,6 +2499,45 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/2b/57/e2bb9b7823c049361c9e7d2d971996430b71260bfc3a7ed289ca4b37c1b0/typst-0.15.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8f33d98451bab132a612b98ffc8d1830c97a076ea3f3fde11f6ff7ab9bcae89c", size = 34161270, upload-time = "2026-06-16T13:02:23.051Z" },
     { url = "https://files.pythonhosted.org/packages/07/3f/6d526ddd93e6a7dd26c2b180245df8d1957d2723860030a10bcc0f93650c/typst-0.15.0-cp38-abi3-pyemscripten_2026_0_wasm32.whl", hash = "sha256:019b4282daa892e0a540687efdd2909808a07453700332c7f61a2c1455950ec9", size = 25710679, upload-time = "2026-06-16T13:02:26.169Z" },
     { url = "https://files.pythonhosted.org/packages/f2/5f/7f19bc9f7a2917a52aa39981aff19f86972f4055b432f77f31642ab57625/typst-0.15.0-cp38-abi3-win_amd64.whl", hash = "sha256:7c12706685dbaf5bb7e43f0fa32e57f2a42549b9ec3de539ad0d32bd8d1ca92e", size = 29372618, upload-time = "2026-06-16T13:02:29.651Z" },
+]
+
+[[package]]
+name = "ui-text-editor"
+source = { editable = "apps/ui_text_editor" }
+
+[[package]]
+name = "ui-text-editor-bench"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "frappe-bench" },
+    { name = "frappe-runtime" },
+    { name = "setuptools" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "coverage" },
+    { name = "pydantic" },
+    { name = "pytest" },
+    { name = "responses" },
+    { name = "unittest-xml-reporting" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "frappe-bench", specifier = ">=5.29.0" },
+    { name = "frappe-runtime", git = "https://github.com/Avunu/frappe-nix?subdirectory=runtime" },
+    { name = "setuptools" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "coverage", specifier = ">=7.10" },
+    { name = "pydantic", specifier = ">=2.12.5" },
+    { name = "pytest", specifier = ">=9.0.2" },
+    { name = "responses" },
+    { name = "unittest-xml-reporting", specifier = ">=3.2" },
 ]
 
 [[package]]

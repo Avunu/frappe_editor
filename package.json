@@ -1,8 +1,8 @@
 {
-	"name": "frappe-editor",
+	"name": "ui-text-editor",
 	"version": "0.1.1",
 	"private": true,
-	"description": "Frappe Editor Integration",
+	"description": "Rich Text Editor for Desk",
 	"license": "MIT",
 	"author": "Avunu LLC",
 	"type": "module",

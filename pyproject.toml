@@ -1,5 +1,5 @@
 [project]
-name = "frappe_editor"
+name = "ui_text_editor"
 authors = [{ name = "Avunu LLC", email = "mail@avu.nu" }]
 description = "Incorporate the Text Editor control from Frappe UI into the Frappe Framework. Who's not to like?"
 requires-python = ">=3.14"
@@ -39,7 +39,7 @@ frappe-major = 16
 # Nightly runs these after `bench build`, with the site up: the built and registered desk
 # bundle is checked there, and a missing one fails rather than skips.
 nightly-suites = [
-	"FRAPPE_EDITOR_REQUIRE_BUNDLE=1 frappe-test --reuse-site --keep-up --module frappe_editor.tests.test_hooks",
+	"UI_TEXT_EDITOR_REQUIRE_BUNDLE=1 frappe-test --reuse-site --keep-up --module ui_text_editor.tests.test_hooks",
 ]
 
 # The desk bundle: Vue SFCs built by the root vite.config.ts, checked by vue-tsc through
@@ -54,7 +54,7 @@ check = "node scripts/vue-tsc.cjs --noEmit"
 python-version = "3.14"
 
 [tool.ty.src]
-include = ["frappe_editor"]
+include = ["ui_text_editor"]
 
 [tool.ty.terminal]
 error-on-warning = true

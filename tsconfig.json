@@ -20,5 +20,5 @@
 		}
 	},
 	"include": ["src/**/*.ts", "src/**/*.vue", "src/**/*.d.ts", "build/**/*.ts", "vite.config.ts"],
-	"exclude": ["node_modules", "frappe_editor/public/dist"]
+	"exclude": ["node_modules", "ui_text_editor/public/dist"]
 }

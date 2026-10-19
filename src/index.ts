@@ -2,7 +2,7 @@
 // For license information, please see license.txt
 
 /**
- * @module frappe_editor.bundle
+ * @module ui_text_editor.bundle
  *
  * Desk entry point, loaded on every page through `app_include_js`. It swaps
  * Frappe's Quill-based `Text Editor` control for the frappe-ui editor; fields

@@ -1,7 +1,7 @@
 <!-- Copyright (c) 2026, Avunu LLC and contributors
 For license information, please see license.txt-->
 
-# Frappe UI Editor Integration
+# Rich Text Editor for Desk
 
 Incorporate the Text Editor control from Frappe UI into the Frappe Framework. Who's not to like?
 
@@ -24,9 +24,9 @@ This app replaces the Quill editor behind every **Text Editor** field in the des
 ## Installation
 
 ```bash
-bench get-app https://github.com/Avunu/frappe_editor --branch develop
-bench --site <site> install-app frappe_editor
-bench build --app frappe_editor
+bench get-app https://github.com/Avunu/ui_text_editor --branch develop
+bench --site <site> install-app ui_text_editor
+bench build --app ui_text_editor
 ```
 
 ## Development
@@ -50,7 +50,7 @@ Where things live:
 - `src/FrappeEditor.vue`, `src/toolbar.ts`: the editor and its toolbar.
 - `src/html.ts`: converts between the stored value and the editor's HTML.
 - `build/`: the CSS scoping used by the build, and its checks.
-- `frappe_editor/public/dist/`: the build output. It is generated and not committed.
+- `ui_text_editor/public/dist/`: the build output. It is generated and not committed.
 
 ### Why the CSS is scoped
 

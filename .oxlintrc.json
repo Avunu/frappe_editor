@@ -28,7 +28,7 @@
 		"unicorn/no-array-sort": "off"
 	},
 	"ignorePatterns": [
-		"frappe_editor/public/dist/**",
+		"ui_text_editor/public/dist/**",
 		".frappe-nix/**",
 		".dev-dist/**",
 		"nix/**",
@@ -48,7 +48,7 @@
 			}
 		},
 		{
-			"files": ["frappe_editor/public/js/*.bundle.ts", "frappe_editor/public/js/*.bundle.js"],
+			"files": ["ui_text_editor/public/js/*.bundle.ts", "ui_text_editor/public/js/*.bundle.js"],
 			"rules": {
 				"import/no-unassigned-import": "off"
 			}

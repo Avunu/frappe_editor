@@ -17,11 +17,11 @@ import frappe
 from frappe.tests import IntegrationTestCase
 from frappe.utils.jinja_globals import bundled_asset
 
-APP = "frappe_editor"
+APP = "ui_text_editor"
 PACKAGE = Path(__file__).resolve().parent.parent
 REPO = PACKAGE.parent
 DIST = PACKAGE / "public" / "dist"
-BUNDLES = {"app_include_js": "frappe_editor.bundle.js", "app_include_css": "frappe_editor.bundle.css"}
+BUNDLES = {"app_include_js": "ui_text_editor.bundle.js", "app_include_css": "ui_text_editor.bundle.css"}
 
 
 class TestHooks(IntegrationTestCase):
@@ -36,9 +36,9 @@ class TestHooks(IntegrationTestCase):
 	def test_the_vite_build_writes_those_names(self):
 		"""vite-register maps `<name>.bundle.<hash>.<ext>` to `<name>.bundle.<ext>`."""
 		config = (REPO / "vite.config.ts").read_text()
-		self.assertIn("js/frappe_editor.bundle.${hash}.js", config)
-		self.assertIn("css/frappe_editor.bundle.${hash}", config)
-		self.assertIn('outDir: "frappe_editor/public/dist"', config)
+		self.assertIn("js/ui_text_editor.bundle.${hash}.js", config)
+		self.assertIn("css/ui_text_editor.bundle.${hash}", config)
+		self.assertIn('outDir: "ui_text_editor/public/dist"', config)
 		self.assertIn(
 			"node scripts/vite-register.mjs",
 			json.loads((REPO / "package.json").read_text())["scripts"]["build"],
@@ -52,23 +52,23 @@ class TestBuiltAssets(IntegrationTestCase):
 	(`yarn build:bundle`), with no bench to register it in, and so does a local
 	`frappe-nix gate typecheck`, so both skip: the first has no `dist/`, the
 	second no `assets.json` entry for this app. The nightly integration job runs
-	`bench build` and then this module with `FRAPPE_EDITOR_REQUIRE_BUNDLE=1`
+	`bench build` and then this module with `UI_TEXT_EDITOR_REQUIRE_BUNDLE=1`
 	(`nightly-suites` in pyproject.toml), where a missing bundle or registration
 	fails instead of skipping.
 	"""
 
 	def setUp(self):
-		required = os.environ.get("FRAPPE_EDITOR_REQUIRE_BUNDLE") == "1"
+		required = os.environ.get("UI_TEXT_EDITOR_REQUIRE_BUNDLE") == "1"
 		if not (DIST / "manifest.json").exists():
 			if required:
-				self.fail(f"FRAPPE_EDITOR_REQUIRE_BUNDLE=1 but the Vite bundle is not built ({DIST})")
+				self.fail(f"UI_TEXT_EDITOR_REQUIRE_BUNDLE=1 but the Vite bundle is not built ({DIST})")
 			self.skipTest("the Vite bundle is not built here")
 		registered = json.loads(frappe.read_file("assets/assets.json") or "{}")
 		missing = [bundle for bundle in BUNDLES.values() if bundle not in registered]
 		if missing:
 			message = f"sites/assets/assets.json does not register {', '.join(missing)}"
 			if required:
-				self.fail(f"FRAPPE_EDITOR_REQUIRE_BUNDLE=1 but {message}")
+				self.fail(f"UI_TEXT_EDITOR_REQUIRE_BUNDLE=1 but {message}")
 			self.skipTest(f"{message} (built with `yarn build:bundle`, not `yarn build`)")
 
 	def test_each_bundle_resolves_to_a_hashed_file(self):

@@ -20,7 +20,7 @@ const SCOPE = ".frappe-editor-root";
 const CSS_DIR = path.resolve(
 	path.dirname(fileURLToPath(import.meta.url)),
 	"..",
-	"frappe_editor",
+	"ui_text_editor",
 	"public",
 	"dist",
 	"css",

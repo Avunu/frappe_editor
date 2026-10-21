@@ -16,10 +16,11 @@ CTX = {"today": datetime.date(2026, 1, 15), "seed": 1, "company": None, "erpnext
 class TestDemo(IntegrationTestCase):
 	def test_setup_creates_the_note_in_quill_markup(self):
 		demo.setup(CTX)
-		note = frappe.get_doc("Note", demo.NOTE)
-		self.assertTrue(note.content.startswith('<div class="ql-editor read-mode">'))
-		self.assertIn('data-list="checked"', note.content)
-		self.assertIn("January 29, 2026", note.content)
+		content = frappe.db.get_value("Note", demo.NOTE, "content")
+		assert isinstance(content, str)
+		self.assertTrue(content.startswith('<div class="ql-editor read-mode">'))
+		self.assertIn('data-list="checked"', content)
+		self.assertIn("January 29, 2026", content)
 
 	def test_setup_is_idempotent(self):
 		demo.setup(CTX)

@@ -1,68 +1,113 @@
 <!-- Copyright (c) 2026, Avunu LLC and contributors
 For license information, please see license.txt-->
 
+<!-- frappe-nix:begin header -->
+
+<div align="center">
+
+<img src="ui_text_editor/public/images/ui_text_editor-logo.svg" width="80" alt="">
+
 # Rich Text Editor for Desk
 
-Incorporate the Text Editor control from Frappe UI into the Frappe Framework. Who's not to like?
+Rich text editor from frappe-ui for every Text Editor field in the Frappe desk
 
-This app replaces the Quill editor behind every **Text Editor** field in the desk with the [frappe-ui](https://github.com/frappe/frappe-ui) editor (TipTap). No doctype changes are needed, and values already saved by the Quill editor open as they were.
+[![CI](https://github.com/Avunu/ui_text_editor/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/Avunu/ui_text_editor/actions/workflows/ci.yml)
+[![Latest release](https://img.shields.io/github/v/release/Avunu/ui_text_editor)](https://github.com/Avunu/ui_text_editor/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](license.txt)
+[![Frappe v16](https://img.shields.io/badge/Frappe-v16-blue)](https://github.com/frappe/frappe/tree/version-16)
 
-## What you get
+</div>
 
-- A toolbar with headings, bold, italic, underline, strike, inline code, text and highlight colour, bullet, numbered and check lists, indent, alignment, quote, code block, horizontal rule, links, images, tables, undo and redo. Selecting text shows a small formatting menu; being inside a table shows row and column controls.
-- Image upload: paste, drop or use the toolbar. Images are uploaded to Frappe's `upload_file` as public files, so they also load in emails and web pages. In a saved document they are attached to it; in a new one they are uploaded without an attachment.
+<!-- frappe-nix:end header -->
+
+## Overview
+
+Frappe's newer apps use the rich text editor from [frappe-ui](https://github.com/frappe/frappe-ui), built on TipTap, while the desk still edits long text in Quill. This app replaces the Quill editor behind every **Text Editor** field in the desk with the frappe-ui editor, so notes, descriptions and e-mail bodies get tables, check lists and a cleaner toolbar.
+
+It is a drop-in swap for anyone running the Frappe desk: no DocType changes are needed, and values already saved by the Quill editor open as they were.
+
+## Features
+
+- A toolbar with headings, bold, italic, underline, strike, inline code, text and highlight colour, bullet, numbered and check lists, indent, alignment, quote, code block, horizontal rule, links, images, tables, undo and redo.
+- Selecting text shows a small formatting menu; being inside a table shows row and column controls.
+- Image upload: paste, drop or use the toolbar. Images are uploaded to Frappe's `upload_file` as public files, so they also load in e-mails and web pages. In a saved document they are attached to it; in a new one they are uploaded without an attachment.
+- Values are saved the way Quill saved them, so print formats, e-mails and read-only views keep working.
 - Light and dark theme, following the desk.
 - A compact editor without the toolbar in grid rows, and `max_height` support.
 
-## What is different from the Quill editor
+<!-- frappe-nix:begin compatibility -->
 
-- The value is saved the way Quill saved it: wrapped in `<div class="ql-editor read-mode">`, and an empty editor saves an empty string. Print formats, emails and read-only views keep working.
-- Quill's bullet lists, check lists and alignment are converted when a value is opened. Text direction (RTL), font sizes and nested indentation that Quill stored as classes are not carried over.
-- **Not included:** `@` mentions, emoji, slash commands, video, file attachments and iframe embeds. The editor's pop-ups for those are not styled for the desk, and the server strips iframes anyway.
-- The `Comment` box in the form timeline is a separate control and still uses Quill.
+## Compatibility
+
+| Frappe | Branch       |
+| ------ | ------------ |
+| v16    | `version-16` |
+
+<!-- frappe-nix:end compatibility -->
+
+<!-- frappe-nix:begin installation -->
 
 ## Installation
 
+On Frappe Cloud, install Rich Text Editor for Desk from the [Frappe marketplace](https://cloud.frappe.io/marketplace/apps/ui_text_editor).
+
+On a bench of your own:
+
 ```bash
-bench get-app https://github.com/Avunu/ui_text_editor --branch develop
+bench get-app https://github.com/Avunu/ui_text_editor --branch version-16
 bench --site <site> install-app ui_text_editor
-bench build --app ui_text_editor
 ```
+
+<!-- frappe-nix:end installation -->
+
+`bench get-app` builds the app's assets. If you install from a checkout without building, run `bench build --app ui_text_editor` before reloading the desk.
+
+## Configuration
+
+There is nothing to configure. Once the app is installed and its assets are built, every **Text Editor** field in the desk uses the new editor. A field's **Placeholder**, **Read Only** and **Max Height** properties work as they do with Quill.
+
+## How It Works
+
+- The desk bundle (`app_include_js`) replaces `frappe.ui.form.ControlTextEditor` with a control that mounts the frappe-ui editor. Fields built after the bundle loads use it.
+- The control converts between the stored value and the editor's HTML. It saves the value wrapped in `<div class="ql-editor read-mode">`, as Quill does, and an empty editor saves an empty string. When a value is opened, Quill's bullet lists, check lists and alignment classes are converted to the editor's markup.
+- Edits are written to the document 300 ms after typing stops, or on blur, the same delay Quill's control uses. Scripts and styles are stripped from the value, as with Quill.
+- The editor's stylesheet is scoped to the editor, so frappe-ui's Tailwind reset and class names cannot change the rest of the desk. The [development notes](docs/development.md) explain how.
+
+## Limitations
+
+- Text direction (RTL), font sizes and nested indentation that Quill stored as classes are not carried over when a value is opened.
+- **Not included:** `@` mentions, emoji, slash commands, video, file attachments and iframe embeds. The editor's pop-ups for those are not styled for the desk, and the server strips iframes anyway.
+- The **Comment** box in the form timeline is a separate control and still uses Quill.
+
+<!-- frappe-nix:begin support -->
+
+## Support
+
+- Bug reports and questions: [GitHub issues](https://github.com/Avunu/ui_text_editor/issues)
+- E-mail: <mail@avu.nu>
+
+<!-- frappe-nix:end support -->
+
+<!-- frappe-nix:begin development -->
 
 ## Development
 
-Requires Node 24+ and yarn. `nix develop` (or direnv) gives you both, plus the git hooks and a dev bench.
+```bash
+nix develop        # or: direnv allow
+prek install       # the git hooks CI runs
+frappe-test        # the tests, the way CI runs them
+```
 
-| Command                     | What it does                                                                                                                          |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `yarn build`                | Builds the bundle, then registers it in the bench's `sites/assets/assets.json` (`scripts/vite-register.mjs`; skipped outside a bench) |
-| `yarn dev`                  | Builds and registers the bundle, then rebuilds on change under a fixed file name. Reload the desk to pick it up                       |
-| `yarn typecheck`            | Type-checks the code                                                                                                                  |
-| `yarn lint` / `yarn format` | Runs oxlint and oxfmt                                                                                                                 |
-| `yarn test`                 | Unit-tests the CSS scoping                                                                                                            |
-| `yarn check:scope`          | Checks that the built stylesheet cannot match outside the editor                                                                      |
-| `frappe-test --reuse-site`  | Runs the Python smoke tests (hooks, bundle names) on the dev site, with coverage                                                      |
+The managed files, checks and release flow are described in the [app standards documentation](https://docs.avunu.net/frappe-nix/docs/app-standards/).
 
-Where things live:
+<!-- frappe-nix:end development -->
 
-- `src/index.ts`: the desk entry point. It replaces `frappe.ui.form.ControlTextEditor`.
-- `src/control.ts`: the field control. It reads and writes the model, and is the only code that knows about Frappe.
-- `src/FrappeEditor.vue`, `src/toolbar.ts`: the editor and its toolbar.
-- `src/html.ts`: converts between the stored value and the editor's HTML.
-- `build/`: the CSS scoping used by the build, and its checks.
-- `ui_text_editor/public/dist/`: the build output. It is generated and not committed.
+The build commands, the source layout and the CSS scoping are described in [docs/development.md](docs/development.md).
 
-### Why the CSS is scoped
-
-The bundle loads on every desk page, but frappe-ui expects to own the page: it brings Tailwind's reset, its design tokens on `:root`, and generic class names such as `.flex` and `.border` that the desk's Bootstrap also defines. The build rewrites every rule so it only matches inside `.frappe-editor-root` (`build/scope.ts`), and `yarn check:scope` fails if one gets through. A new frappe-ui release that adds a rule shape the scoper doesn't know is the usual cause.
-
-Two things keep the editor's floating UI inside that scope:
-
-- frappe-ui's overlays (menus, tooltips, dialogs) teleport into one portal host that carries the scope class, through frappe-ui's `portalTargetKey`.
-- The link, colour and table-size pop-ups mount their own Vue apps directly on `<body>`. `vite.config.ts` routes the `vue` imports made from frappe-ui's editor to `src/popups.ts`, which tags each of those containers and points their overlays at the same host.
-
-If a pop-up ever shows up unstyled, check that it goes through one of those two paths.
+<!-- frappe-nix:begin license -->
 
 ## License
 
-[MIT](license.txt), Copyright (c) 2026 Avunu LLC.
+MIT, Copyright (c) 2024–present Avunu LLC → [license.txt](license.txt)
+
+<!-- frappe-nix:end license -->

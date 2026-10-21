@@ -1,0 +1,42 @@
+[
+	{
+		"name": "note-editor",
+		"theme": "dark",
+		"alt": "A Note's content field in the frappe-ui editor, with its toolbar, headings, check list, bullet list and table",
+		"featured": true,
+		"readme": "hero",
+		"width": 2880,
+		"height": 1800,
+		"sha256": "f4770579b68dbfb8b975c6d136b56c061baa891433db02ce128aa507ba88515e"
+	},
+	{
+		"name": "note-editor",
+		"theme": "light",
+		"alt": "A Note's content field in the frappe-ui editor, with its toolbar, headings, check list, bullet list and table",
+		"featured": true,
+		"readme": "hero",
+		"width": 2880,
+		"height": 1800,
+		"sha256": "34a2425bf5bb8466f1c727aed7c0b3fba51451c3240104b9c35614a7d3321706"
+	},
+	{
+		"name": "table-menu",
+		"theme": "dark",
+		"alt": "The row and column controls shown while the cursor is in a table",
+		"featured": true,
+		"readme": "feature",
+		"width": 2880,
+		"height": 1800,
+		"sha256": "0bc79964d9565a14a680e536fd0e35c34cf11aa6e8ea41ecdf6f3ee9b4f13a8c"
+	},
+	{
+		"name": "table-menu",
+		"theme": "light",
+		"alt": "The row and column controls shown while the cursor is in a table",
+		"featured": true,
+		"readme": "feature",
+		"width": 2880,
+		"height": 1800,
+		"sha256": "ceacc09889e08f80d0569b6ee270a2a20e8130538a66437a742cba2c48756152"
+	}
+]

@@ -1,0 +1,10 @@
+# The app's registry listing (docs/app-standards/marketplace.md); frappe-listing check validates it.
+schema = 1
+title = "Rich Text Editor for Desk"
+tagline = "Rich text editor from frappe-ui for every Text Editor field in the Frappe desk"
+type = "extension"
+category = "Extensions"
+categories = ["Productivity"]
+website = "https://avunu.net/open-source/ui_text_editor/"
+documentation = "https://github.com/Avunu/ui_text_editor#readme"
+apps_screen = false

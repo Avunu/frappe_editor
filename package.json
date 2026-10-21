@@ -10,7 +10,7 @@
 		"dev": "vite build --mode development && node scripts/vite-register.mjs && vite build --mode development --watch",
 		"build": "vite build && node scripts/vite-register.mjs",
 		"build:bundle": "vite build",
-		"typecheck": "node scripts/vue-tsc.cjs --noEmit",
+		"typecheck": "tsc --build tsconfig.solution.json && node scripts/vue-tsc.cjs --noEmit",
 		"lint": "oxlint",
 		"lint:fix": "oxlint --fix",
 		"format": "oxfmt",

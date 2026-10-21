@@ -60,6 +60,8 @@ bench --site <site> install-app ui_text_editor
 
 <!-- frappe-nix:end installation -->
 
+Until the first release creates the `version-16` branch, install from `develop` instead: `bench get-app https://github.com/Avunu/ui_text_editor --branch develop`.
+
 `bench get-app` builds the app's assets. If you install from a checkout without building, run `bench build --app ui_text_editor` before reloading the desk.
 
 ## Configuration

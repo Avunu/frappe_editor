@@ -32,4 +32,4 @@ The build commands, the source layout and the CSS scoping are described in [Deve
 
 ## License
 
-[MIT](license.txt), Copyright (c) 2026 Avunu LLC.
+[MIT](license.txt), Copyright (c) 2024–present Avunu LLC.

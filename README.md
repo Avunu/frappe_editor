@@ -16,6 +16,11 @@ Rich text editor from frappe-ui for every Text Editor field in the Frappe desk
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](license.txt)
 [![Frappe v16](https://img.shields.io/badge/Frappe-v16-blue)](https://github.com/frappe/frappe/tree/version-16)
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/note-editor-dark.webp">
+  <img src="docs/screenshots/note-editor-light.webp" alt="A Note's content field in the frappe-ui editor, with its toolbar, headings, check list, bullet list and table">
+</picture>
+
 </div>
 
 <!-- frappe-nix:end header -->

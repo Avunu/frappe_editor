@@ -1,7 +1,7 @@
 [project]
 name = "ui_text_editor"
 authors = [{ name = "Avunu LLC", email = "mail@avu.nu" }]
-description = "Incorporate the Text Editor control from Frappe UI into the Frappe Framework. Who's not to like?"
+description = "Rich text editor from frappe-ui for every Text Editor field in the Frappe desk"
 requires-python = ">=3.14"
 readme = "README.md"
 dynamic = ["version"]

@@ -38,5 +38,8 @@ test("is idempotent", () => {
 	for (const selector of [".flex", ":root", '[data-theme="dark"]', "html body"]) {
 		assert.equal(scope(scope(selector)), scope(selector));
 	}
-	assert.equal(scope(".frappe-editor-root.frappe-editor-portal"), ".frappe-editor-root.frappe-editor-portal");
+	assert.equal(
+		scope(".frappe-editor-root.frappe-editor-portal"),
+		".frappe-editor-root.frappe-editor-portal",
+	);
 });

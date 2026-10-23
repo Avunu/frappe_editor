@@ -38,7 +38,11 @@ export default {
 			route: NOTE,
 			alt: "The row and column controls shown while the cursor is in a table",
 			waitForFn: READY,
-			actions: [...EDIT, { click: `${EDITABLE} table tr:nth-child(3) td:nth-child(2) p` }, { wait: 500 }],
+			actions: [
+				...EDIT,
+				{ click: `${EDITABLE} table tr:nth-child(3) td:nth-child(2) p` },
+				{ wait: 500 },
+			],
 			mask: [".frappe-timestamp"],
 			readme: "feature",
 			featured: true,
